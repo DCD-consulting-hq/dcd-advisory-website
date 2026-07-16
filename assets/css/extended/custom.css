@@ -1,0 +1,284 @@
+/* ==========================================================================
+   1. GLOBAL THEME ENGINE OVERRIDES (Maps to your color palette)
+   ========================================================================== */
+:root {
+    /* Your Core Palette Variables */
+    --bg-canvas: #FAFAFA;
+    --text-primary: #0F172A;
+    --text-secondary: #475569;
+    --accent-slate: #0F172A;
+    --border-muted: #E2E8F0;
+    --surface-card: #FFFFFF;
+    --status-cyan: #06B6D4;
+    --neural-green: #10B981;
+
+    /* PaperMod Internal Variable Mapping (Light Mode) */
+    --theme: var(--bg-canvas);
+    --entry: var(--surface-card);
+    --primary: var(--text-primary);
+    --secondary: var(--text-secondary);
+    --tertiary: #94A3B8;
+    --content: var(--text-primary);
+    --border: var(--border-muted);
+    --hljs-bg: #090D1A; /* Matches your high-contrast SpaceX style terminal box */
+}
+
+/* PaperMod Internal Variable Mapping (Dark Mode Override) */
+.dark {
+    --theme: #090D1A;      /* Matches your console box canvas background */
+    --entry: #0F172A;      /* Dark surface card tone */
+    --primary: #F8FAFC;    /* High-contrast off-white text */
+    --secondary: #94A3B8;  /* Subdued secondary slate gray text */
+    --tertiary: #475569;
+    --content: #CBD5E1;    /* Code log terminal stream text profile */
+    --border: #1E293B;     /* Muted blueprint panel borders */
+    --hljs-bg: #030712;
+}
+
+/* ==========================================================================
+   2. LANDING PAGE STRUCTURAL ISOLATION
+   (Prevents your landing page grid from blowing up PaperMod's blog engine)
+   ========================================================================== */
+
+/* Only apply the flex grid alignment and base background rules 
+   if we are sitting explicitly on your unique custom homepage grid canvas */
+body.home-layout {
+    background-color: var(--bg-canvas);
+    color: var(--text-primary);
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, sans-serif;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2.5rem 2rem;
+    letter-spacing: -0.02em;
+    position: relative;
+    overflow-x: hidden;
+}
+
+body.home-layout::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background-image: linear-gradient(var(--border-muted) 1px, transparent 1px), 
+                      linear-gradient(90deg, var(--border-muted) 1px, transparent 1px);
+    background-size: 40px 40px;
+    opacity: 0.7;
+    z-index: -1;
+}
+
+/* ==========================================================================
+   3. PAPERMOD ADVANCED ESTHETIC INJECTION (DCD Consulting Aesthetic)
+   ========================================================================== */
+
+/* Global Page Background Blueprint Grid for the Blog Sections */
+body:not(.home-layout) {
+    background-image: linear-gradient(var(--border-muted) 1px, transparent 1px), 
+                      linear-gradient(90deg, var(--border-muted) 1px, transparent 1px);
+    background-size: 40px 40px;
+    background-attachment: fixed;
+}
+
+/* Top Navigation Bar Polish */
+.nav {
+    background: rgba(250, 250, 250, 0.8) !important;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--border-muted);
+    max-width: 1000px !important;
+    margin: 0 auto;
+    padding: 1rem 2rem !important;
+}
+
+/* Dark mode navigation adjustments */
+.dark .nav {
+    background: rgba(9, 13, 26, 0.8) !important;
+    border-bottom: 1px solid #1E293B;
+}
+
+.logo a {
+    font-size: 1.25rem !important;
+    font-weight: 800 !important;
+    letter-spacing: -0.04em !important;
+    text-transform: uppercase;
+}
+
+/* Post Feed Feed Cards Framework */
+.post-entry {
+    background: var(--surface-card) !important;
+    border: 1px solid var(--border-muted) !important;
+    border-radius: 4px !important;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.01) !important;
+    transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1) !important;
+    padding: 2rem !important;
+    margin-bottom: 1.5rem !important;
+}
+
+.post-entry:hover {
+    border-color: var(--text-primary) !important;
+    transform: translateY(-2px);
+    box-shadow: 0 12px 36px rgba(0, 0, 0, 0.05) !important;
+}
+
+/* Dark mode post card hover tweaks */
+.dark .post-entry:hover {
+    border-color: var(--status-cyan) !important;
+    box-shadow: 0 12px 36px rgba(6, 182, 212, 0.05) !important;
+}
+
+.entry-title {
+    font-size: 1.5rem !important;
+    font-weight: 800 !important;
+    letter-spacing: -0.03em !important;
+    color: var(--text-primary) !important;
+}
+
+.entry-content {
+    color: var(--text-secondary) !important;
+    font-size: 0.95rem !important;
+    line-height: 1.6 !important;
+}
+
+/* Infrastructure Metadata Footer Labels */
+.entry-footer {
+    font-family: SFMono-Regular, Consolas, monospace;
+    font-size: 0.75rem !important;
+    font-weight: 600;
+    color: #64748B !important;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-top: 1rem;
+}
+
+/* Main Title Node Enhancements */
+.page-header h1 {
+    font-size: 3rem !important;
+    font-weight: 900 !important;
+    letter-spacing: -0.05em !important;
+    color: var(--text-primary) !important;
+    margin-bottom: 0.5rem;
+}
+
+.page-description {
+    font-size: 1.1rem !important;
+    color: var(--text-secondary) !important;
+    margin-bottom: 3rem !important;
+}
+
+/* Breadcrumbs diagnostic trace style */
+.breadcrumbs {
+    font-family: SFMono-Regular, Consolas, monospace;
+    font-size: 0.7rem !important;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: #94A3B8 !important;
+}
+
+.breadcrumbs a {
+    color: var(--status-cyan) !important;
+}
+.landing-blog-link {
+            text-decoration: none !important;
+            color: var(--text-secondary) !important;
+            font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", sans-serif !important;
+            font-weight: 600 !important;
+            font-size: 0.9rem !important;
+            display: inline-block;
+            transition: color 0.2s ease;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        .landing-blog-link:hover {
+            color: var(--accent-slate) !important;
+        }
+        /* ==========================================================================
+   HEADER NAVIGATION ALIGNMENT SYNC
+   ========================================================================== */
+
+/* Align the containers horizontally on the exact same baseline */
+.nav-links {
+    display: flex !important;
+    align-items: center !important;
+    gap: 1.5rem !important;
+}
+
+/* Force both the link and the button to share identical typography metrics */
+.nav-links .nav-link-btn {
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, sans-serif !important;
+    font-size: 0.9rem !important;
+    font-weight: 600 !important;
+    color: var(--text-secondary) !important;
+    text-decoration: none !important;
+    background: none !important;
+    border: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    cursor: pointer !important;
+    line-height: 1 !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    height: auto !important;
+    transition: color 0.2s ease !important;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Unified hover-state transition handler */
+.nav-links .nav-link-btn:hover {
+    color: var(--accent-slate) !important;
+}
+/* ==========================================================================
+   HEADER BRANDING RE-ENGINEERING (Octopus Logo Injection)
+   ========================================================================== */
+
+/* 1. Hide PaperMod's native text logo wrapper */
+.logo a {
+    font-size: 0 !important;
+    color: transparent !important;
+    display: inline-flex !important;
+    align-items: center;
+}
+
+/* 2. Re-create the branding layout using your precise inline SVG dimensions and typography */
+.logo a::before {
+    content: "";
+    display: inline-block;
+    width: 28px;
+    height: 28px;
+    margin-right: 0.75rem;
+    
+    /* Your exact custom vector mapped directly as a URL asset background */
+    background-image: url('data:image/svg+xml;utf8,<svg width="28" height="28" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg"><ellipse cx="50" cy="42" rx="28" ry="26" fill="%230F172A"/><circle cx="39" cy="38" r="5" fill="%23F8FAFC"/><circle cx="61" cy="38" r="5" fill="%23F8FAFC"/><circle cx="39" cy="38" r="2" fill="%230F172A"/><circle cx="61" cy="38" r="2" fill="%230F172A"/><path d="M28 55 Q20 75 25 88" stroke="%230F172A" stroke-width="9" stroke-linecap="round"/><path d="M38 58 Q33 80 40 90" stroke="%230F172A" stroke-width="8" stroke-linecap="round"/><path d="M50 60 Q50 82 48 91" stroke="%230F172A" stroke-width="8" stroke-linecap="round"/><path d="M62 58 Q68 80 65 90" stroke="%230F172A" stroke-width="8" stroke-linecap="round"/><path d="M72 55 Q80 73 78 88" stroke="%230F172A" stroke-width="9" stroke-linecap="round"/><circle cx="24" cy="68" r="2" fill="%23F8FAFC"/><circle cx="35" cy="73" r="2" fill="%23F8FAFC"/><circle cx="47" cy="76" r="1.5" fill="%23F8FAFC"/><circle cx="65" cy="74" r="2" fill="%23F8FAFC"/><circle cx="77" cy="70" r="2" fill="%23F8FAFC"/></svg>');
+    background-size: contain;
+    background-repeat: no-repeat;
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* 3. Re-inject your custom text asset name right behind the graphic asset */
+.logo a::after {
+    content: "DCD Consulting";
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+    color: var(--text-primary) !important;
+    font-size: 1.15rem !important;
+    font-weight: 800 !important;
+    letter-spacing: -0.04em !important;
+    text-transform: uppercase;
+    line-height: 28px;
+}
+
+/* 4. Match the interactive rotational hover mechanics from your main dashboard */
+.logo a:hover::before {
+    transform: rotate(12deg) scale(1.08);
+}
+/* 5. Force-hide the native dark mode moon toggle button */
+#theme-toggle {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    width: 0 !important;
+    height: 0 !important;
+    padding: 0 !important;
+    margin: 0 !important;
+}

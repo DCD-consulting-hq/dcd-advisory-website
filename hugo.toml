@@ -1,0 +1,20 @@
+baseURL = 'http://localhost:1313/'
+languageCode = 'en-us'
+title = 'DCD Advisory'
+theme = 'PaperMod'
+
+[params]
+  description = "Custom AI & Automation Systems for Psychiatry Practices"
+  author = "Chadwick"
+
+  ShowBreadCrumbs = true
+  ShowCodeCopyButtons = true
+  
+  # DISBALE THE DEFAULT MOON REACTION TOGGLE
+  disableThemeToggle = true
+
+[outputs]
+  home = ["HTML"]
+
+[permalinks]
+  blog = "/blog/:title/"

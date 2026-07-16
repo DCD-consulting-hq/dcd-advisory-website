@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>DCD Advisory</title>
+    <link>http://localhost:49925/</link>
+    <description>Recent content on DCD Advisory</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 15 Jul 2026 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:49925/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>My First Blog Post</title>
+      <link>http://localhost:49925/blog/my-first-post/</link>
+      <pubDate>Wed, 15 Jul 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:49925/blog/my-first-post/</guid>
+      <description>&lt;h1 id=&#34;hello-from-dcd-advisory&#34;&gt;Hello from DCD Advisory&lt;/h1&gt;
+&lt;p&gt;This is your first blog post. You can write about automation for psychiatry practices, HIPAA-compliant systems, AI tools, etc.&lt;/p&gt;
+&lt;h2 id=&#34;subheading&#34;&gt;Subheading&lt;/h2&gt;
+&lt;p&gt;Add more content here. Hugo will automatically turn this into a nice blog post.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

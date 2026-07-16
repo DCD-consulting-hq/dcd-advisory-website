@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Blog on DCD Advisory</title>
+    <link>http://localhost:1313/blog/</link>
+    <description>Recent content in Blog on DCD Advisory</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 16 Jul 2026 01:23:29 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/blog/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Unearthing the Unspoken: How AI-Powered Pre-Visit Workflows Transform Psychiatric Care for Menopausal Patients</title>
+      <link>http://localhost:1313/blog/unearthing-the-unspoken-how-ai-powered-pre-visit-workflows-transform-psychiatric-care-for-menopausal-patients/</link>
+      <pubDate>Thu, 16 Jul 2026 01:23:29 +0000</pubDate>
+      <guid>http://localhost:1313/blog/unearthing-the-unspoken-how-ai-powered-pre-visit-workflows-transform-psychiatric-care-for-menopausal-patients/</guid>
+      <description>&lt;p&gt;Navigating the intersection of patient well-being and operational efficiency is a complex task for clinic owners and administrators. A persistent challenge in psychiatric care is capturing a truly comprehensive patient narrative, especially during sensitive or less-discussed life stages. This issue is exacerbated when patients feel rushed or uncomfortable, leaving crucial information &amp;lsquo;unspoken&amp;rsquo; during visits.&lt;/p&gt;
+&lt;p&gt;At DCD Advisory, we recognize that optimizing intake processes is not merely about speed; it&amp;rsquo;s about &lt;strong&gt;deepening clinical insight and enhancing patient care&lt;/strong&gt;. Traditional psychiatric practices often overlook the emotional, cognitive, and social impacts of menopause—a life transition burdened with societal stigma that can significantly affect mental health.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>My First Blog Post</title>
+      <link>http://localhost:1313/blog/my-first-blog-post/</link>
+      <pubDate>Wed, 15 Jul 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/blog/my-first-blog-post/</guid>
+      <description>&lt;h1 id=&#34;hello-from-dcd-advisory&#34;&gt;Hello from DCD Advisory&lt;/h1&gt;
+&lt;p&gt;This is your first blog post. You can write about automation for psychiatry practices, HIPAA-compliant systems, AI tools, etc.&lt;/p&gt;
+&lt;h2 id=&#34;subheading&#34;&gt;Subheading&lt;/h2&gt;
+&lt;p&gt;Add more content here. Hugo will automatically turn this into a nice blog post.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>
