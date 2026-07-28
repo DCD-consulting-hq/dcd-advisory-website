@@ -11,8 +11,6 @@ cover:
   hiddenInList: false
 ---
 
-## Beyond the Mind: Leveraging Automation for Integrated Mental and Physical Health Referrals in Psychiatry
-
 In the intricate landscape of mental healthcare, psychiatric practices often face the dual challenge of focusing on the mind while acknowledging the significant influence of the body. Patients rarely present with purely psychological concerns; underlying or co-occurring physical conditions can profoundly impact psychiatric symptoms, treatment adherence, and overall prognosis.
 
 For practice owners and clinicians, addressing these interconnected health dimensions holistically is a formidable task. Manually identifying these complex interconnections and coordinating appropriate referrals is time-consuming, prone to oversight, and often results in fragmented care. This not only hinders patient recovery but also places an undue operational burden on your practice.
