@@ -6,7 +6,7 @@ categories: ["Healthcare Technology Operations"]
 tags: ["Integrated Care", "Psychiatry Automation", "Referral Management", "Physical Comorbidities", "Clinic Operations", "Patient Intake"]
 slug: "beyond-the-mind-leveraging-automation-for-integrated-mental-and-physical-health-referrals-in-psychia"
 cover:
-  image: "/images/research-signal-2026-07-24-new-university-initiative-offers-screening-referrals-for-endometriosis-620fec9e-banner.png"
+  image: "/images/research-signal-2026-07-24-new-university-initiative-offers-screening-referrals-for-endometriosis-620fec9e-publish.md-banner.png"
   alt: "Integrated mental and physical health referral automation"
   hiddenInList: false
 ---
