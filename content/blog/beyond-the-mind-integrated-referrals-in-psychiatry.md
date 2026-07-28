@@ -1,4 +1,4 @@
-```markdown
+```yaml
 ---
 title: "Beyond the Mind: Leveraging Automation for Integrated Mental and Physical Health Referrals in Psychiatry"
 date: 2026-07-25T08:34:46.746Z
