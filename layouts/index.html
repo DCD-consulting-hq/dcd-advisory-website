@@ -682,36 +682,7 @@
     </style>
 </head>
 <body class="home-layout">
-    <header>
-        <div class="brand-container" id="brand-home">
-            <svg width="28" height="28" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" class="brand-logo">
-                <ellipse cx="50" cy="42" rx="28" ry="26" fill="#0F172A"/>
-                <circle cx="39" cy="38" r="5" fill="#F8FAFC"/>
-                <circle cx="61" cy="38" r="5" fill="#F8FAFC"/>
-                <circle cx="39" cy="38" r="2" fill="#0F172A"/>
-                <circle cx="61" cy="38" r="2" fill="#0F172A"/>
-                <path d="M28 55 Q20 75 25 88" stroke="#0F172A" stroke-width="9" stroke-linecap="round"/>
-                <path d="M38 58 Q33 80 40 90" stroke="#0F172A" stroke-width="8" stroke-linecap="round"/>
-                <path d="M50 60 Q50 82 48 91" stroke="#0F172A" stroke-width="8" stroke-linecap="round"/>
-                <path d="M62 58 Q68 80 65 90" stroke="#0F172A" stroke-width="8" stroke-linecap="round"/>
-                <path d="M72 55 Q80 73 78 88" stroke="#0F172A" stroke-width="9" stroke-linecap="round"/>
-                <circle cx="24" cy="68" r="2" fill="#F1F5F9"/>
-                <circle cx="35" cy="73" r="2" fill="#F1F5F9"/>
-                <circle cx="47" cy="76" r="1.5" fill="#F1F5F9"/>
-                <circle cx="65" cy="74" r="2" fill="#F1F5F9"/>
-                <circle cx="77" cy="70" r="2" fill="#F1F5F9"/>
-            </svg>
-            <div class="brand-text">DCD Consulting</div>
-        </div>
-        <div class="nav-links">
-            <a href="/blog/" class="nav-link-btn landing-blog-link">Blog</a>
-            <button class="nav-link-btn" id="open-about">About Me</button>
-            <div class="network-ticker">
-                <div class="ticker-dot"></div>
-                <div class="ticker-text">SOVEREIGN_ENGINE_v5.5</div>
-            </div>
-        </div>
-    </header>
+    {{ partial "dcd-header.html" . }}
 
     <main>
         <div class="fomo-pill">
@@ -826,12 +797,7 @@
         </div>
     </div>
 
-    <footer>
-        <div class="lock-indicator">[ SECURE TECHNOLOGY VENDOR // HEALTHCARE WORKFLOW AUTOMATION ]</div>
-        <p class="legal-perimeter">
-            DCD Consulting operates strictly as an independent technology vendor providing cloud infrastructure, software automation, workflow engineering, and AI implementation services. DCD Consulting does not provide medical care, psychiatric treatment, clinical decision-making, legal advice, or compliance auditing. Healthcare providers and practice owners remain responsible for all clinical, legal, operational, and regulatory decisions. All automation systems are designed to support administrative and operational efficiency while preserving appropriate boundaries around protected health information and clinical responsibility.
-        </p>
-    </footer>
+    {{ partial "dcd-footer.html" . }}
 
     <script>
         // Programmatic Deployment URL Target - REPLACE WITH YOUR LIVE GOOGLE APPS SCRIPT WEB APP URL
