@@ -736,24 +736,7 @@
             </div>
         </div>
 
-        <div class="console-box">
-            <div class="console-header">
-                <div class="console-dots">
-                    <div class="console-dot active"></div>
-                    <div class="console-dot"></div>
-                    <div class="console-dot"></div>
-                </div>
-                <div class="console-title">LIVE_SYSTEM_DIAGNOSTICS</div>
-            </div>
-            <div class="console-log" id="terminal-stream">
-                <div class="console-line">&gt; <span class="cyan">MAPPING</span> practice bottlenecks and manual workflows...</div>
-                <div class="console-line">&gt; CONNECTING intake, billing, scheduling, and reporting systems...</div>
-                <div class="console-line">&gt; BUILDING secure Google Workspace and cloud infrastructure...</div>
-                <div class="console-line">&gt; AUTOMATING repetitive administrative tasks...</div>
-                <div class="console-line">&gt; DEPLOYING custom dashboards and AI-assisted workflows...</div>
-                <div class="console-line">&gt; <span class="green">STATUS: OPERATIONAL.</span> Practice infrastructure ready to scale.</div>
-            </div>
-        </div>
+        {{ partial "dcd-terminal.html" . }}
     </main>
 
     <!-- ABOUT ME SLIDE MODAL -->

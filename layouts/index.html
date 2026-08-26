@@ -736,24 +736,7 @@
             </div>
         </div>
 
-        <div class="console-box">
-            <div class="console-header">
-                <div class="console-dots">
-                    <div class="console-dot active"></div>
-                    <div class="console-dot"></div>
-                    <div class="console-dot"></div>
-                </div>
-                <div class="console-title">LIVE_SYSTEM_DIAGNOSTICS</div>
-            </div>
-            <div class="console-log" id="terminal-stream">
-                <div class="console-line">&gt; <span class="cyan">MAPPING</span> practice bottlenecks and manual workflows...</div>
-                <div class="console-line">&gt; CONNECTING intake, billing, scheduling, and reporting systems...</div>
-                <div class="console-line">&gt; BUILDING secure Google Workspace and cloud infrastructure...</div>
-                <div class="console-line">&gt; AUTOMATING repetitive administrative tasks...</div>
-                <div class="console-line">&gt; DEPLOYING custom dashboards and AI-assisted workflows...</div>
-                <div class="console-line">&gt; <span class="green">STATUS: OPERATIONAL.</span> Practice infrastructure ready to scale.</div>
-            </div>
-        </div>
+        {{ partial "dcd-terminal.html" . }}
     </main>
 
     <!-- ABOUT ME SLIDE MODAL -->
@@ -797,7 +780,12 @@
         </div>
     </div>
 
-    {{ partial "dcd-footer.html" . }}
+    <footer>
+        <div class="lock-indicator">[ SECURE TECHNOLOGY VENDOR // HEALTHCARE WORKFLOW AUTOMATION ]</div>
+        <p class="legal-perimeter">
+            DCD Consulting operates strictly as an independent technology vendor providing cloud infrastructure, software automation, workflow engineering, and AI implementation services. DCD Consulting does not provide medical care, psychiatric treatment, clinical decision-making, legal advice, or compliance auditing. Healthcare providers and practice owners remain responsible for all clinical, legal, operational, and regulatory decisions. All automation systems are designed to support administrative and operational efficiency while preserving appropriate boundaries around protected health information and clinical responsibility.
+        </p>
+    </footer>
 
     <script>
         // Programmatic Deployment URL Target - REPLACE WITH YOUR LIVE GOOGLE APPS SCRIPT WEB APP URL
