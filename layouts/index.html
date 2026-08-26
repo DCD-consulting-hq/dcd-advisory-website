@@ -285,7 +285,7 @@
 
         .pipeline-matrix {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
+            grid-template-columns: repeat(2, 1fr);
             gap: 1.5rem;
             text-align: left;
             margin-bottom: 4.5rem;
@@ -685,59 +685,95 @@
     {{ partial "dcd-header.html" . }}
 
     <main>
-        <div class="fomo-pill">
-            <span class="pulse-green"></span>
-            Currently accepting two new implementation projects for Q3
-        </div>
-        
-        <h1>
-            Custom AI & Automation Systems.
-            <span>Built for Modern Behavioral Health & Psychiatry Practices.</span>
-        </h1>
-        
-        <p class="hero-lead">DCD Consulting designs secure cloud infrastructure, AI workflows, and custom automation systems for psychiatry and behavioral health practices. We eliminate repetitive administrative work, connect disconnected software, and help your practice scale without adding unnecessary overhead.</p>
-        
-        <div class="hero-accent"></div>
+        <main>
+    <div class="fomo-pill">
+        <span class="pulse-green"></span>
+        Custom systems built around the problem
+    </div>
 
-        <div class="cta-container">
-            <button id="open-portal" class="cta-button">Schedule Infrastructure Audit &rarr;</button>
-        </div>
+    <h1>
+        We Build What the Business Needs.
+        <span>Brand. Web. Automation. AI.</span>
+    </h1>
 
-        <div class="pipeline-matrix">
-            <div class="matrix-node">
-                <span class="node-index">[01 // SECURE FOUNDATION]</span>
-                <h3>Healthcare-Ready Cloud Infrastructure</h3>
-                <p>We build dedicated Google Workspace and cloud environments with secure access controls, organized permissions, and operational guardrails designed for healthcare teams.</p>
-            </div>
-            <div class="matrix-node">
-                <span class="node-index">[02 // WORKFLOW AUTOMATION]</span>
-                <h3>Administrative Workflows That Run Themselves</h3>
-                <p>We connect your intake, billing, scheduling, forms, reporting, and internal communication systems so repetitive work moves automatically instead of manually.</p>
-            </div>
-            <div class="matrix-node">
-                <span class="node-index">[03 // CUSTOM AI SYSTEMS]</span>
-                <h3>Practice-Specific AI & Data Tools</h3>
-                <p>From revenue cycle dashboards to billing reconciliation and intelligent reporting, every system is engineered around your exact practice—not generic templates.</p>
-            </div>
-        </div>
+    <p class="hero-lead">
+        DCD Advisory designs brands, digital experiences, custom automation,
+        and AI systems for organizations with problems that don't fit neatly
+        inside a template.
+    </p>
 
-        <div class="proof-strip">
-            <span class="highlight">// PERFORMANCE STRATIFICATION:</span> Measured <span class="highlight">72% reduction</span> in manual intake work across active engagements.
+    <div class="hero-accent"></div>
+
+    <div class="cta-container">
+        <button id="open-portal" class="cta-button">
+            Start a Project &rarr;
+        </button>
+    </div>
+
+    <div class="pipeline-matrix">
+        <div class="matrix-node">
+            <span class="node-index">[01 // BRAND]</span>
+            <h3>Brand & Creative Systems</h3>
+            <p>
+                Identity systems, production artwork, vector reconstruction,
+                brand guidelines, digital collateral, and vendor-ready assets
+                built for consistent use across every application.
+            </p>
         </div>
 
-        <div class="contact-plane">
-            <div class="contact-node">
-                <span class="label">Direct Line</span>
-                <a href="tel:+17034750638">+1 (703) 475-0638</a>
-            </div>
-            <div class="contact-node">
-                <span class="label">Secure Email</span>
-                <a href="mailto:chadwick@dcdadvisory.com">chadwick@dcdadvisory.com</a>
-            </div>
+        <div class="matrix-node">
+            <span class="node-index">[02 // WEB]</span>
+            <h3>Web & Digital Experiences</h3>
+            <p>
+                Websites, landing pages, interactive tools, portals, analytics,
+                forms, and digital experiences designed around how the
+                organization actually works.
+            </p>
         </div>
 
-        {{ partial "dcd-terminal.html" . }}
-    </main>
+        <div class="matrix-node">
+            <span class="node-index">[03 // AUTOMATION]</span>
+            <h3>Automation & Operations</h3>
+            <p>
+                Google Apps Script, Workspace automation, dashboards,
+                integrations, document systems, reporting, and workflows that
+                remove repetitive work.
+            </p>
+        </div>
+
+        <div class="matrix-node">
+            <span class="node-index">[04 // AI & DATA]</span>
+            <h3>AI & Data Systems</h3>
+            <p>
+                Custom AI assistants, research systems, classification tools,
+                extraction pipelines, knowledge systems, and decision-support
+                workflows built around the actual problem.
+            </p>
+        </div>
+    </div>
+
+    <div class="proof-strip">
+        <span class="highlight">// SYSTEMS-FIRST:</span>
+        Different deliverables. One method.
+        <span class="highlight">Understand the problem. Build the right system.</span>
+    </div>
+
+    <div class="contact-plane">
+        <div class="contact-node">
+            <span class="label">Direct Line</span>
+            <a href="tel:+17034750638">+1 (703) 475-0638</a>
+        </div>
+
+        <div class="contact-node">
+            <span class="label">Email</span>
+            <a href="mailto:chadwick@dcdadvisory.com">
+                chadwick@dcdadvisory.com
+            </a>
+        </div>
+    </div>
+
+    {{ partial "dcd-terminal.html" . }}
+</main>
 
     <!-- ABOUT ME SLIDE MODAL -->
     <div class="about-modal" id="about-overlay">
