@@ -9,11 +9,20 @@
     </div>
 
     <div class="console-log" id="terminal-stream">
-        <div class="console-line">&gt; <span class="cyan">MAPPING</span> practice bottlenecks and manual workflows...</div>
-        <div class="console-line">&gt; CONNECTING intake, billing, scheduling, and reporting systems...</div>
-        <div class="console-line">&gt; BUILDING secure Google Workspace and cloud infrastructure...</div>
-        <div class="console-line">&gt; AUTOMATING repetitive administrative tasks...</div>
-        <div class="console-line">&gt; DEPLOYING custom dashboards and AI-assisted workflows...</div>
-        <div class="console-line">&gt; <span class="green">STATUS: OPERATIONAL.</span> Practice infrastructure ready to scale.</div>
+        {{ if eq .RelPermalink "/healthcare/" }}
+            <div class="console-line">&gt; <span class="cyan">MAPPING</span> practice bottlenecks and manual workflows...</div>
+            <div class="console-line">&gt; CONNECTING intake, billing, scheduling, and reporting systems...</div>
+            <div class="console-line">&gt; BUILDING secure Google Workspace and cloud infrastructure...</div>
+            <div class="console-line">&gt; AUTOMATING repetitive administrative tasks...</div>
+            <div class="console-line">&gt; DEPLOYING custom dashboards and AI-assisted workflows...</div>
+            <div class="console-line">&gt; <span class="green">STATUS: OPERATIONAL.</span> Practice infrastructure ready to scale.</div>
+        {{ else }}
+            <div class="console-line">&gt; <span class="cyan">MAPPING</span> business goals, bottlenecks, and opportunities...</div>
+            <div class="console-line">&gt; DESIGNING brand and digital infrastructure...</div>
+            <div class="console-line">&gt; CONNECTING forms, data, email, workflows, and systems...</div>
+            <div class="console-line">&gt; AUTOMATING repetitive work...</div>
+            <div class="console-line">&gt; DEPLOYING custom AI and operational tools...</div>
+            <div class="console-line">&gt; <span class="green">STATUS: READY TO SCALE.</span></div>
+        {{ end }}
     </div>
 </div>

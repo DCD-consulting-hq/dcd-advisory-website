@@ -1,6 +1,32 @@
 <footer>
-    <div class="lock-indicator">[ SECURE TECHNOLOGY VENDOR // HEALTHCARE WORKFLOW AUTOMATION ]</div>
-    <p class="legal-perimeter">
-        DCD Consulting operates strictly as an independent technology vendor providing cloud infrastructure, software automation, workflow engineering, and AI implementation services. DCD Consulting does not provide medical care, psychiatric treatment, clinical decision-making, legal advice, or compliance auditing. Healthcare providers and practice owners remain responsible for all clinical, legal, operational, and regulatory decisions. All automation systems are designed to support administrative and operational efficiency while preserving appropriate boundaries around protected health information and clinical responsibility.
-    </p>
+    {{ if eq .Section "healthcare" }}
+
+        <div class="lock-indicator">
+            [ SECURE TECHNOLOGY VENDOR // HEALTHCARE WORKFLOW AUTOMATION ]
+        </div>
+
+        <p class="legal-perimeter">
+            DCD Advisory operates strictly as an independent technology vendor providing cloud infrastructure,
+            software automation, workflow engineering, and AI implementation services. DCD Advisory does not
+            provide medical care, psychiatric treatment, clinical decision-making, legal advice, or compliance
+            auditing. Healthcare providers and practice owners remain responsible for all clinical, legal,
+            operational, and regulatory decisions. All automation systems are designed to support administrative
+            and operational efficiency while preserving appropriate boundaries around protected health information
+            and clinical responsibility.
+        </p>
+
+    {{ else }}
+
+        <div class="lock-indicator">
+            [ BRAND // WEB // AUTOMATION // AI & DATA ]
+        </div>
+
+        <p class="legal-perimeter">
+            DCD Advisory designs and builds custom brands, websites, automation systems, AI tools, and digital
+            infrastructure around the specific needs of each organization. Project scope, technology, integrations,
+            and deliverables are defined around the problem being solved rather than a fixed template or
+            off-the-shelf package.
+        </p>
+
+    {{ end }}
 </footer>
