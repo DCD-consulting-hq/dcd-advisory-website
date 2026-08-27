@@ -709,10 +709,11 @@
 
         /* Selected work */
         .work-grid {
-            display: grid;
-            grid-template-columns: minmax(0, 1.15fr) minmax(280px, 0.85fr);
-            gap: 1rem;
-        }
+    display: grid;
+    grid-template-columns: minmax(0, 1.15fr) minmax(280px, 0.85fr);
+    gap: 1rem;
+    align-items: start;
+}
 
         .work-feature,
         .work-card {
@@ -770,6 +771,24 @@
             font-style: normal;
         }
 
+        .work-visual-image {
+            min-height: 260px;
+            background: #07090D;
+        }
+
+        .work-visual-image::before,
+        .work-visual-image::after {
+            display: none;
+        }
+
+        .work-image {
+            display: block;
+            width: 100%;
+            height: 100%;
+            min-height: 260px;
+            object-fit: cover;
+        }
+
         .work-content {
             padding: 1.5rem;
         }
@@ -816,6 +835,62 @@
             margin-bottom: 0.7rem;
             font-size: 1.15rem;
             letter-spacing: -0.03em;
+        }
+
+        .work-card-link {
+            display: block;
+            color: inherit;
+            text-decoration: none;
+            transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+        }
+
+        .work-card-link:hover {
+            transform: translateY(-2px);
+            border-color: rgba(6,182,212,0.45);
+            box-shadow: 0 12px 28px rgba(15,23,42,0.07);
+        }
+
+        .work-card-visual {
+    margin: -1.5rem -1.5rem 1.25rem;
+    overflow: hidden;
+    border-bottom: 1px solid var(--border-muted);
+    background: #EEF2F7;
+}
+
+.work-card-visual img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+        .work-card-link:hover .work-card-visual img {
+            transform: scale(1.015);
+        }
+
+        .work-card-cta {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.55rem;
+            margin-top: 1.15rem;
+            padding: 0.8rem 1rem;
+            background: var(--accent-slate);
+            color: #FFFFFF;
+            border: 1px solid var(--accent-slate);
+            border-radius: 4px;
+            box-shadow: 0 6px 16px rgba(15, 23, 42, 0.12);
+            font-family: SFMono-Regular, Consolas, monospace;
+            font-size: 0.72rem;
+            font-weight: 800;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+            transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+        }
+
+        .work-card-link:hover .work-card-cta {
+            transform: translateY(-1px);
+            background: #111C31;
+            box-shadow: 0 9px 22px rgba(15, 23, 42, 0.18);
         }
 
         .confidential-note {
@@ -1790,48 +1865,93 @@
 
             <div class="work-grid">
                 <article class="work-feature">
-                    <div class="work-visual">
-                        <strong>BRAND<em>&rarr;</em>SYSTEM</strong>
+                    <div class="work-visual work-visual-image">
+                        <img
+                            class="work-image"
+                            src="/images/work/petty-racing-gen5-feature.webp"
+                            alt="Petty Racing Gen5 brand identity system"
+                            loading="lazy"
+                        >
                     </div>
 
                     <div class="work-content">
-                        <span class="work-tag">Identity / Production System</span>
-                        <h3>From rough source artwork to a reusable production-ready brand system.</h3>
+                        <span class="work-tag">Petty Racing Gen5 // Brand Identity &amp; Production System</span>
+                        <h3>A motorsports identity built to work from digital channels to racewear and large-format production.</h3>
 
                         <div class="work-lines">
-                            <div><b>Problem:</b> Existing artwork was not reliable across vendors, formats, and future applications.</div>
-                            <div><b>System:</b> Vector reconstruction, identity variants, production files, usage guidance, and organized delivery.</div>
-                            <div><b>Outcome:</b> A repeatable asset system designed for print, digital, apparel, and vendor handoff.</div>
+                            <div><b>Problem:</b> Turn an initial visual direction into a flexible identity that could remain consistent across racing, apparel, embroidery, digital, print, signage, trailers, and merchandise.</div>
+                            <div><b>System:</b> Primary and compact logo configurations, PRG5 abbreviated marks, one-color standards, clear-space rules, production guidance, and organized vendor-ready artwork.</div>
+                            <div><b>Outcome:</b> A complete reusable brand system with scalable SVG, EPS, PDF, PNG, and JPG resources built for real-world production and handoff.</div>
                         </div>
                     </div>
                 </article>
 
                 <div class="work-stack">
-                    <article class="work-card">
-                        <span class="work-tag">Automation / Healthcare Operations</span>
-                        <h3>Turn manual operational tracking into exception-driven workflows.</h3>
-                        <div class="work-lines">
-                            <div><b>Problem:</b> Important billing and operational information lived across manual tracking and disconnected systems.</div>
-                            <div><b>System:</b> Reconciliation logic, automated checks, structured data, dashboards, and reporting workflows.</div>
-                            <div><b>Outcome:</b> Less repetitive handling and clearer visibility into what actually needs attention.</div>
-                        </div>
-                    </article>
+                    <a class="work-card work-card-link" href="/healthcare/">
+    <div class="work-card-visual">
+        <img
+            src="/images/work/mindsett-healthcare-systems-feature.jpg"
+            alt="Mindsett Mental Health healthcare automation and data systems"
+            loading="lazy"
+        >
+    </div>
 
-                    <article class="work-card">
-                        <span class="work-tag">AI / Research &amp; Intelligence</span>
-                        <h3>Convert high-volume information into structured, reviewable intelligence.</h3>
-                        <div class="work-lines">
-                            <div><b>Problem:</b> Large amounts of source material were difficult to compare, classify, and reason across consistently.</div>
-                            <div><b>System:</b> Ingestion, extraction, classification, evidence linking, scoring, and decision-support views.</div>
-                            <div><b>Outcome:</b> A searchable intelligence layer built for human review rather than a pile of disconnected documents.</div>
+    <span class="work-tag">Mindsett Mental Health // Healthcare Systems + Automation</span>
+
+    <h3>
+        Connecting clinical, messaging, and business platforms into one operational system.
+    </h3>
+
+    <div class="work-lines">
+        <div>
+            <b>Problem:</b>
+            Billing, communication, and operational data lived across TherapyNotes,
+            Spruce Health, Google Workspace Enterprise, and separate tracking workflows.
+        </div>
+
+        <div>
+            <b>System:</b>
+            Custom databases, Workspace automations, reconciliation logic, issue tracking,
+            and Looker Studio dashboards that bridge the existing platforms without
+            replacing the tools the practice already uses.
+        </div>
+
+        <div>
+            <b>Outcome:</b>
+            A clearer exception-driven workflow that surfaces billing issues,
+            reduces repetitive review, and gives the practice a more usable
+            operational view of its data.
+        </div>
+    </div>
+
+    <span class="work-card-cta">
+        Explore Healthcare Systems <span aria-hidden="true">&rarr;</span>
+    </span>
+</a>
+
+                    <a class="work-card work-card-link" href="https://lindsayclancytrial.com/" target="_blank" rel="noopener">
+                        <div class="work-card-visual">
+                            <img
+                                src="/images/work/lindsay-clancy-trial-intelligence-feature.webp"
+                                alt="Lindsay Clancy Trial Intelligence archive and Case Meter interface"
+                                loading="lazy"
+                            >
                         </div>
-                    </article>
+                        <span class="work-tag">Lindsay Clancy Trial Intelligence // Web + AI &amp; Data</span>
+                        <h3>A fast-moving public trial turned into a structured, source-linked research system.</h3>
+                        <div class="work-lines">
+                            <div><b>Problem:</b> Daily testimony, transcripts, and evidence were difficult to follow as a coherent record while the trial continued to evolve.</div>
+                            <div><b>System:</b> A Hugo-based public archive with structured transcripts, daily recap publishing, evidence organization, proposition analysis, and an experimental Case Intelligence dashboard.</div>
+                            <div><b>Outcome:</b> An independent research platform that turns a high-volume court record into searchable, reviewable information while keeping sources, methodology, and limitations visible.</div>
+                        </div>
+                        <span class="work-card-cta">View Live System <span aria-hidden="true">&nearr;</span></span>
+                    </a>
                 </div>
             </div>
 
             <p class="confidential-note">
-                Some work is described at a high level where client, project, or operational confidentiality applies.
-                Named case studies will be added as appropriate and with permission.
+                Additional work may be described at a high level where client, project, or operational confidentiality applies.
+                Named projects are shown with permission or are independently owned and operated by DCD.
             </p>
         </section>
 
