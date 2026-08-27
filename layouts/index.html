@@ -1459,9 +1459,28 @@
         }
 
         @media (max-width: 768px) {
-            body {
-                padding: 1.5rem 1rem 2rem;
-            }
+
+    body {
+        padding: 1.5rem 1rem 2rem;
+    }
+
+    /* your existing mobile rules stay here */
+
+    /* Petty Racing image — show full artwork on mobile */
+    .work-visual-image {
+        min-height: 0;
+        height: auto;
+    }
+
+    .work-visual-image .work-image {
+        width: 100%;
+        height: auto;
+        min-height: 0;
+        object-fit: contain;
+        object-position: center;
+        display: block;
+    }
+}
 
             header {
                 flex-direction: column;
