@@ -847,17 +847,24 @@
 
             // Interactive Systems Configurator Portal Triggers
             const openPortalBtn = document.getElementById("open-portal");
+            const openPortalNavBtn = document.getElementById("open-portal-nav");
             const closePortalBtn = document.getElementById("close-portal");
             const portalOverlay = document.getElementById("portal-overlay");
             const portalFrame = document.getElementById("portal-frame");
 
-            openPortalBtn.addEventListener("click", () => {
-                // Programmatically set iframe src only when requested (Lazy-Loading Baseline)
-                if (portalFrame.src === "about:blank" || portalFrame.src === "") {
-                    portalFrame.src = WEB_APP_URL;
-                }
-                portalOverlay.classList.add("active");
-            });
+            function openProjectPortal() {
+    if (portalFrame.src === "about:blank" || portalFrame.src === "") {
+        portalFrame.src = WEB_APP_URL;
+    }
+
+    portalOverlay.classList.add("active");
+}
+
+openPortalBtn.addEventListener("click", openProjectPortal);
+
+if (openPortalNavBtn) {
+    openPortalNavBtn.addEventListener("click", openProjectPortal);
+}
 
             closePortalBtn.addEventListener("click", () => {
                 portalOverlay.classList.remove("active");
