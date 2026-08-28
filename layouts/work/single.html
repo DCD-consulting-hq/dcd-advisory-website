@@ -310,7 +310,7 @@
 
         .project-meta {
             display: grid;
-            grid-template-columns: repeat(4, minmax(0, 1fr));
+            grid-template-columns: repeat(5, minmax(0, 1fr));
             margin-top: 1rem;
             border: 1px solid var(--border-muted);
             border-radius: 6px;
@@ -1003,7 +1003,7 @@
     {{ partial "dcd-footer.html" . }}
 
     <script>
-        const WEB_APP_URL = "https://script.google.com/macros/s/AKfycbzMfGEJkJIlbzKuTJhGmYX2OG5FTXkpLpQaAObOTXuG6lo5dSJPQH0XWScZCI3m-AQB3g/exec";
+        const WEB_APP_URL = document.getElementById("portal-overlay")?.dataset.portalUrl || "";
 
         document.addEventListener("DOMContentLoaded", () => {
             const brandHome = document.getElementById("brand-home");

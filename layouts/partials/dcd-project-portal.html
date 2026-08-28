@@ -1,16 +1,53 @@
+{{/* 
+    DCD PROJECT PORTAL ROUTER
+
+    Default:
+    General DCD Advisory Project Discovery
+
+    Healthcare-specific:
+    /healthcare/
+    /work/mindsett-mental-health/
+*/}}
+
+{{ $generalPortal := "https://script.google.com/macros/s/AKfycbz5EMZu4NzMJobE9DBIuY1F9CMuF5noGfwH_YLyfKThsueXjTuPWiv2L0E-tK2ugHA37g/exec" }}
+
+{{ $healthcarePortal := "https://script.google.com/macros/s/AKfycbzMfGEJkJIlbzKuTJhGmYX2OG5FTXkpLpQaAObOTXuG6lo5dSJPQH0XWScZCI3m-AQB3g/exec" }}
+
+{{ $portalUrl := $generalPortal }}
+{{ $portalTitle := "DCD Advisory Project Discovery" }}
+{{ $portalLabel := "DCD PROJECT DISCOVERY" }}
+
+{{ if or
+    (eq .RelPermalink "/healthcare/")
+    (eq .RelPermalink "/work/mindsett-mental-health/")
+}}
+    {{ $portalUrl = $healthcarePortal }}
+    {{ $portalTitle = "DCD Healthcare Systems Configurator" }}
+    {{ $portalLabel = "DCD HEALTHCARE SYSTEMS PORTAL" }}
+{{ end }}
+
 <!-- INTERACTIVE SYSTEMS PORTAL MODAL -->
-<div class="portal-modal" id="portal-overlay">
+<div
+    class="portal-modal"
+    id="portal-overlay"
+    data-portal-url="{{ $portalUrl }}"
+>
     <div class="portal-card">
         <div class="portal-header">
             <div class="brand-container">
-                <div class="brand-text" style="color: #F8FAFC; font-size: 1rem;">
-                    DCD CONFIGURATOR PORTAL
+                <div
+                    class="brand-text"
+                    style="color: #F8FAFC; font-size: 1rem;"
+                >
+                    {{ $portalLabel }}
                 </div>
             </div>
 
             <button
                 class="close-btn"
                 id="close-portal"
+                type="button"
+                aria-label="Close project portal"
                 style="position: static; color: #64748B; font-size: 1.25rem;"
             >
                 ✕
@@ -21,7 +58,9 @@
             class="portal-iframe"
             id="portal-frame"
             src="about:blank"
-            title="DCD Systems Configurator"
+            data-src="{{ $portalUrl }}"
+            title="{{ $portalTitle }}"
+            loading="lazy"
         ></iframe>
     </div>
 </div>

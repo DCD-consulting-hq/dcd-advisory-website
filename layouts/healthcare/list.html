@@ -929,7 +929,7 @@
 
     <script>
         // Programmatic Deployment URL Target - REPLACE WITH YOUR LIVE GOOGLE APPS SCRIPT WEB APP URL
-        const WEB_APP_URL = "https://script.google.com/macros/s/AKfycbzMfGEJkJIlbzKuTJhGmYX2OG5FTXkpLpQaAObOTXuG6lo5dSJPQH0XWScZCI3m-AQB3g/exec";
+        const WEB_APP_URL = document.getElementById("portal-overlay")?.dataset.portalUrl || "";
 
         document.addEventListener("DOMContentLoaded", () => {
             // Hardened Self-Resetting Terminal Telemetry Engine
