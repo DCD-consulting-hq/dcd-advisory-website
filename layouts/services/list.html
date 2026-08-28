@@ -1,0 +1,1824 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>DCD Advisory | Brand, Web, Automation & AI Services</title>
+    <meta name="description" content="Explore DCD Advisory capabilities across brand systems, web and digital experiences, automation and operations, and AI and data systems.">
+    <link rel="canonical" href="{{ .Permalink }}">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "name": "DCD Advisory Services",
+      "provider": {
+        "@type": "Organization",
+        "name": "DCD Advisory",
+        "legalName": "DCD Consulting"
+      },
+      "areaServed": "United States",
+      "serviceType": [
+        "Brand Systems",
+        "Web and Digital Experiences",
+        "Automation and Operations",
+        "AI and Data Systems"
+      ],
+      "url": {{ .Permalink | jsonify }}
+    }
+    </script>
+
+    <style>
+        :root {
+            --bg-canvas: #FAFAFA;
+            --text-primary: #0F172A;
+            --text-secondary: #475569;
+            --accent-slate: #0F172A;
+            --border-muted: #E2E8F0;
+            --surface-card: #FFFFFF;
+            --surface-soft: #F8FAFC;
+            --status-cyan: #06B6D4;
+            --neural-green: #10B981;
+            --terminal-bg: #090D1A;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 2rem;
+        }
+
+        body {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 2.5rem 2rem;
+            background: var(--bg-canvas);
+            color: var(--text-primary);
+            font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, sans-serif;
+            letter-spacing: -0.02em;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        body::before {
+            content: "";
+            position: fixed;
+            inset: 0;
+            z-index: -1;
+            pointer-events: none;
+            opacity: 0.7;
+            background-image:
+                linear-gradient(var(--border-muted) 1px, transparent 1px),
+                linear-gradient(90deg, var(--border-muted) 1px, transparent 1px);
+            background-size: 40px 40px;
+        }
+
+        a {
+            color: inherit;
+        }
+
+        button,
+        summary {
+            font-family: inherit;
+        }
+
+        header,
+        main,
+        footer {
+            width: 100%;
+            max-width: 1100px;
+            position: relative;
+            z-index: 10;
+        }
+
+        /* =========================================================
+           SHARED HEADER — MATCHES HOMEPAGE / OTHER PRIMARY PAGES
+           ========================================================= */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid var(--border-muted);
+            padding-bottom: 1.5rem;
+            z-index: 100;
+        }
+
+        .brand-container {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            cursor: pointer;
+        }
+
+        .brand-logo {
+            width: 28px;
+            height: 28px;
+            flex-shrink: 0;
+            transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .brand-container:hover .brand-logo {
+            transform: rotate(12deg) scale(1.08);
+        }
+
+        .brand-text {
+            font-size: 1.15rem;
+            font-weight: 800;
+            letter-spacing: -0.04em;
+            text-transform: uppercase;
+            color: var(--accent-slate);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 1.5rem;
+            align-items: center;
+            margin-left: auto;
+        }
+
+        .nav-link-btn {
+            background: none;
+            border: none;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: color 0.2s ease;
+            text-decoration: none;
+            font-family: inherit;
+        }
+
+        .nav-link-btn:hover {
+            color: var(--accent-slate);
+        }
+
+        .services-menu {
+            position: relative;
+        }
+
+        .services-menu summary {
+            list-style: none;
+        }
+
+        .services-menu summary::-webkit-details-marker {
+            display: none;
+        }
+
+        .services-menu summary::after {
+            content: "⌄";
+            margin-left: 0.35rem;
+            font-size: 0.65rem;
+            color: #94A3B8;
+        }
+
+        .services-menu[open] summary::after {
+            content: "⌃";
+        }
+
+        .services-dropdown {
+            position: absolute;
+            top: calc(100% + 0.75rem);
+            left: 50%;
+            transform: translateX(-50%);
+            width: min(440px, calc(100vw - 2rem));
+            background: #FFFFFF;
+            border: 1px solid var(--border-muted);
+            border-radius: 6px;
+            padding: 0.5rem;
+            box-shadow: 0 18px 40px rgba(15, 23, 42, 0.14);
+            z-index: 1000;
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 0.25rem;
+        }
+
+        .services-dropdown a {
+            display: flex;
+            flex-direction: column;
+            gap: 0.15rem;
+            padding: 0.7rem 0.8rem;
+            border-radius: 4px;
+            text-decoration: none;
+            text-align: left;
+            transition: background 0.2s ease;
+        }
+
+        .services-dropdown a:hover {
+            background: #F8FAFC;
+        }
+
+        .services-dropdown strong {
+            color: var(--accent-slate);
+            font-size: 0.82rem;
+            line-height: 1.3;
+        }
+
+        .services-dropdown span {
+            color: var(--text-secondary);
+            font-size: 0.7rem;
+            line-height: 1.35;
+        }
+
+        .services-dropdown .services-view-all {
+            grid-column: 1 / -1;
+            margin-top: 0.25rem;
+            padding-top: 0.75rem;
+            border-top: 1px solid var(--border-muted);
+            color: var(--accent-slate);
+            font-size: 0.78rem;
+            font-weight: 700;
+        }
+
+        #open-portal-nav {
+            background: var(--accent-slate);
+            color: #FFFFFF;
+            padding: 0.65rem 1rem;
+            border-radius: 4px;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        #open-portal-nav:hover {
+            color: #FFFFFF;
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(15, 23, 42, 0.12);
+        }
+
+        .network-ticker {
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            border: 1px solid var(--border-muted);
+            padding: 0.5rem 0.9rem;
+            border-radius: 4px;
+            box-shadow: 0 1px 2px rgba(0,0,0,0.01);
+        }
+
+        .ticker-dot {
+            width: 6px;
+            height: 6px;
+            background-color: var(--status-cyan);
+            border-radius: 50%;
+            animation: pulse-glow 2s infinite;
+        }
+
+        .ticker-text {
+            font-size: 0.65rem;
+            font-weight: 700;
+            font-family: SFMono-Regular, Consolas, monospace;
+            color: var(--text-primary);
+            letter-spacing: 0.05em;
+        }
+
+        @keyframes pulse-glow {
+            0%, 100% { opacity: 0.55; box-shadow: 0 0 0 rgba(6,182,212,0); }
+            50% { opacity: 1; box-shadow: 0 0 12px rgba(6,182,212,0.35); }
+        }
+
+        /* =========================================================
+           SERVICES PAGE
+           ========================================================= */
+        main {
+            padding-top: 4.5rem;
+        }
+
+        .kicker {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.55rem;
+            margin-bottom: 1rem;
+            color: #64748B;
+            font-family: SFMono-Regular, Consolas, monospace;
+            font-size: 0.72rem;
+            font-weight: 800;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+        }
+
+        .kicker::before {
+            content: "";
+            width: 22px;
+            height: 2px;
+            background: var(--status-cyan);
+        }
+
+        .services-hero {
+            display: grid;
+            grid-template-columns: minmax(0, 1.15fr) minmax(300px, 0.85fr);
+            gap: 4rem;
+            align-items: end;
+            padding-bottom: 5.5rem;
+        }
+
+        .services-hero h1 {
+            max-width: 760px;
+            font-size: clamp(3.8rem, 8vw, 6.8rem);
+            line-height: 0.91;
+            letter-spacing: -0.067em;
+            color: var(--accent-slate);
+        }
+
+        .services-hero h1 span {
+            display: block;
+            color: #64748B;
+            font-weight: 750;
+        }
+
+        .hero-side p {
+            color: var(--text-secondary);
+            font-size: 1.05rem;
+            line-height: 1.72;
+        }
+
+        .hero-proof {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.55rem 1rem;
+            margin-top: 1.4rem;
+            color: #64748B;
+            font-family: SFMono-Regular, Consolas, monospace;
+            font-size: 0.66rem;
+            font-weight: 800;
+            text-transform: uppercase;
+        }
+
+        .hero-proof span {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+
+        .hero-proof i {
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: var(--neural-green);
+            box-shadow: 0 0 0 4px rgba(16,185,129,0.08);
+        }
+
+        .capability-jump {
+            position: sticky;
+            top: 1rem;
+            z-index: 40;
+            display: grid;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            gap: 1px;
+            overflow: hidden;
+            margin-bottom: 5.5rem;
+            border: 1px solid var(--border-muted);
+            border-radius: 6px;
+            background: var(--border-muted);
+            box-shadow: 0 10px 24px rgba(15,23,42,0.05);
+        }
+
+        .capability-jump a {
+            padding: 0.95rem 0.8rem;
+            background: rgba(255,255,255,0.95);
+            text-align: center;
+            text-decoration: none;
+            color: var(--text-secondary);
+            font-family: SFMono-Regular, Consolas, monospace;
+            font-size: 0.67rem;
+            font-weight: 800;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+            transition: background 0.2s ease, color 0.2s ease;
+        }
+
+        .capability-jump a:hover {
+            background: var(--accent-slate);
+            color: #FFFFFF;
+        }
+
+        .section {
+            padding: 5.75rem 0;
+            border-top: 1px solid var(--border-muted);
+        }
+
+        .section-head {
+            display: grid;
+            grid-template-columns: minmax(0, 1.2fr) minmax(280px, 0.8fr);
+            gap: 3rem;
+            align-items: end;
+            margin-bottom: 2.5rem;
+        }
+
+        .section-head h2,
+        .cap-title,
+        .problem-section h2,
+        .connection-panel h2,
+        .final-cta h2 {
+            font-size: clamp(2.35rem, 5vw, 4.25rem);
+            line-height: 1;
+            letter-spacing: -0.055em;
+            color: var(--accent-slate);
+        }
+
+        .section-head p {
+            max-width: 520px;
+            color: var(--text-secondary);
+            line-height: 1.7;
+        }
+
+        /* Individual capability deep-dives */
+        .capability-block {
+            scroll-margin-top: 5.5rem;
+        }
+
+        .capability-shell {
+            display: grid;
+            grid-template-columns: minmax(280px, 0.78fr) minmax(0, 1.22fr);
+            gap: 1px;
+            overflow: hidden;
+            border: 1px solid var(--border-muted);
+            border-radius: 8px;
+            background: var(--border-muted);
+        }
+
+        .cap-summary,
+        .cap-detail {
+            background: #FFFFFF;
+        }
+
+        .cap-summary {
+            min-height: 570px;
+            display: flex;
+            flex-direction: column;
+            padding: 2rem;
+        }
+
+        .cap-index {
+            color: var(--status-cyan);
+            font-family: SFMono-Regular, Consolas, monospace;
+            font-size: 0.68rem;
+            font-weight: 800;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+        }
+
+        .cap-title {
+            margin: 3.5rem 0 1rem;
+            font-size: clamp(2.35rem, 4vw, 3.65rem);
+        }
+
+        .cap-summary > p {
+            color: var(--text-secondary);
+            line-height: 1.7;
+        }
+
+        .cap-signal {
+            margin-top: auto;
+            padding: 1rem;
+            border: 1px solid var(--border-muted);
+            border-radius: 5px;
+            background: var(--surface-soft);
+        }
+
+        .cap-signal small {
+            display: block;
+            margin-bottom: 0.4rem;
+            color: #94A3B8;
+            font-family: SFMono-Regular, Consolas, monospace;
+            font-size: 0.58rem;
+            font-weight: 800;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+        }
+
+        .cap-signal strong {
+            display: block;
+            font-size: 0.86rem;
+            line-height: 1.5;
+        }
+
+        .cap-detail {
+            padding: 2rem;
+        }
+
+        .detail-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 1rem;
+        }
+
+        .detail-card {
+            min-height: 190px;
+            padding: 1.25rem;
+            border: 1px solid var(--border-muted);
+            border-radius: 5px;
+            background: var(--surface-soft);
+        }
+
+        .detail-card span {
+            display: block;
+            margin-bottom: 1.6rem;
+            color: #94A3B8;
+            font-family: SFMono-Regular, Consolas, monospace;
+            font-size: 0.58rem;
+            font-weight: 800;
+            letter-spacing: 0.055em;
+            text-transform: uppercase;
+        }
+
+        .detail-card h3 {
+            margin-bottom: 0.55rem;
+            font-size: 1rem;
+            letter-spacing: -0.025em;
+        }
+
+        .detail-card p,
+        .detail-card li {
+            color: var(--text-secondary);
+            font-size: 0.78rem;
+            line-height: 1.55;
+        }
+
+        .detail-card ul {
+            display: grid;
+            gap: 0.34rem;
+            padding-left: 1rem;
+        }
+
+        .proof-link {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 1rem;
+            margin-top: 1rem;
+            padding: 1rem 1.1rem;
+            border-radius: 5px;
+            background: var(--accent-slate);
+            color: #FFFFFF;
+            text-decoration: none;
+        }
+
+        .proof-link small {
+            display: block;
+            margin-bottom: 0.22rem;
+            color: #94A3B8;
+            font-family: SFMono-Regular, Consolas, monospace;
+            font-size: 0.58rem;
+            font-weight: 800;
+            letter-spacing: 0.055em;
+            text-transform: uppercase;
+        }
+
+        .proof-link strong {
+            font-size: 0.88rem;
+        }
+
+        .proof-link > span:last-child {
+            color: #22D3EE;
+            font-family: SFMono-Regular, Consolas, monospace;
+            font-weight: 800;
+        }
+
+        /* Problem-first section */
+        .problem-section {
+            padding: 3rem;
+            border-radius: 8px;
+            background: var(--accent-slate);
+            color: #FFFFFF;
+        }
+
+        .problem-section .kicker {
+            color: #94A3B8;
+        }
+
+        .problem-section h2 {
+            max-width: 760px;
+            color: #FFFFFF;
+        }
+
+        .problem-section > p {
+            max-width: 720px;
+            margin-top: 1rem;
+            color: #CBD5E1;
+            line-height: 1.7;
+        }
+
+        .problem-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 0.7rem;
+            margin-top: 2.2rem;
+        }
+
+        .problem-card {
+            min-height: 185px;
+            padding: 1rem;
+            border: 1px solid #334155;
+            border-radius: 5px;
+            background: rgba(255,255,255,0.035);
+        }
+
+        .problem-card span {
+            display: block;
+            margin-bottom: 2.2rem;
+            color: #22D3EE;
+            font-family: SFMono-Regular, Consolas, monospace;
+            font-size: 0.58rem;
+            font-weight: 800;
+        }
+
+        .problem-card strong {
+            display: block;
+            margin-bottom: 0.45rem;
+            color: #F8FAFC;
+            font-size: 0.93rem;
+        }
+
+        .problem-card p {
+            color: #94A3B8;
+            font-size: 0.74rem;
+            line-height: 1.5;
+        }
+
+        /* Connection section */
+        .connection-panel {
+            display: grid;
+            grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+            gap: 3rem;
+            align-items: center;
+            padding: 3rem;
+            border: 1px solid var(--border-muted);
+            border-radius: 8px;
+            background: #FFFFFF;
+        }
+
+        .connection-panel p {
+            margin-top: 1rem;
+            color: var(--text-secondary);
+            line-height: 1.7;
+        }
+
+        .connection-flow {
+            display: grid;
+            gap: 0.55rem;
+        }
+
+        .flow-row {
+            display: grid;
+            grid-template-columns: 34px 1fr auto;
+            gap: 0.8rem;
+            align-items: center;
+            min-height: 58px;
+            padding: 0.8rem;
+            border: 1px solid var(--border-muted);
+            border-radius: 5px;
+            background: var(--surface-soft);
+        }
+
+        .flow-row b,
+        .flow-row span {
+            font-family: SFMono-Regular, Consolas, monospace;
+            font-size: 0.62rem;
+            font-weight: 800;
+        }
+
+        .flow-row b {
+            color: var(--status-cyan);
+        }
+
+        .flow-row strong {
+            font-size: 0.82rem;
+        }
+
+        .flow-row span {
+            color: #94A3B8;
+        }
+
+        /* Engagement models */
+        .engagement-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 0.9rem;
+        }
+
+        .engagement-card {
+            min-height: 250px;
+            display: flex;
+            flex-direction: column;
+            padding: 1.4rem;
+            border: 1px solid var(--border-muted);
+            border-radius: 6px;
+            background: rgba(255,255,255,0.9);
+        }
+
+        .engagement-card .cap-index {
+            margin-bottom: auto;
+        }
+
+        .engagement-card h3 {
+            margin: 3.2rem 0 0.55rem;
+            font-size: 1.15rem;
+        }
+
+        .engagement-card p {
+            color: var(--text-secondary);
+            font-size: 0.8rem;
+            line-height: 1.55;
+        }
+
+        /* FAQ */
+        .faq-grid {
+            display: grid;
+            gap: 0.6rem;
+        }
+
+        .faq-item {
+            border: 1px solid var(--border-muted);
+            border-radius: 5px;
+            background: #FFFFFF;
+        }
+
+        .faq-item summary {
+            cursor: pointer;
+            list-style: none;
+            padding: 1rem 1.1rem;
+            font-weight: 750;
+            display: flex;
+            justify-content: space-between;
+            gap: 1rem;
+        }
+
+        .faq-item summary::-webkit-details-marker {
+            display: none;
+        }
+
+        .faq-item summary::after {
+            content: "+";
+            color: var(--status-cyan);
+            font-family: SFMono-Regular, Consolas, monospace;
+        }
+
+        .faq-item[open] summary::after {
+            content: "−";
+        }
+
+        .faq-item p {
+            padding: 0 1.1rem 1rem;
+            color: var(--text-secondary);
+            line-height: 1.65;
+            font-size: 0.86rem;
+        }
+
+        .healthcare-callout {
+            display: grid;
+            grid-template-columns: minmax(0, 1fr) auto;
+            gap: 2rem;
+            align-items: center;
+            padding: 2.4rem;
+            border: 1px solid rgba(6,182,212,0.28);
+            border-radius: 7px;
+            background:
+                linear-gradient(135deg, rgba(6,182,212,0.06), rgba(16,185,129,0.035)),
+                #FFFFFF;
+        }
+
+        .healthcare-callout h2 {
+            margin-bottom: 0.8rem;
+            font-size: clamp(2rem, 4vw, 3.35rem);
+            letter-spacing: -0.05em;
+        }
+
+        .healthcare-callout p {
+            max-width: 720px;
+            color: var(--text-secondary);
+            line-height: 1.65;
+        }
+
+        .healthcare-link {
+            display: inline-flex;
+            min-height: 48px;
+            align-items: center;
+            justify-content: center;
+            padding: 0 1rem;
+            border-radius: 4px;
+            background: var(--accent-slate);
+            color: #FFFFFF;
+            text-decoration: none;
+            font-size: 0.82rem;
+            font-weight: 750;
+            white-space: nowrap;
+        }
+
+        .final-cta {
+            display: grid;
+            grid-template-columns: minmax(0, 1.08fr) minmax(280px, 0.92fr);
+            gap: 3rem;
+            align-items: center;
+            padding: 2.7rem;
+            border: 1px solid var(--border-muted);
+            border-radius: 7px;
+            background: var(--surface-soft);
+        }
+
+        .final-cta p {
+            margin-top: 1rem;
+            color: var(--text-secondary);
+            line-height: 1.65;
+        }
+
+        .final-actions {
+            display: grid;
+            gap: 0.7rem;
+        }
+
+        .cta-button,
+        .secondary-button {
+            min-height: 48px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            padding: 0 1.25rem;
+            border-radius: 4px;
+            font-size: 0.86rem;
+            font-weight: 750;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .cta-button {
+            border: 1px solid var(--accent-slate);
+            background: var(--accent-slate);
+            color: #FFFFFF;
+        }
+
+        .secondary-button {
+            border: 1px solid var(--border-muted);
+            background: #FFFFFF;
+            color: var(--accent-slate);
+        }
+
+        /* About + portal */
+        .about-modal,
+        .portal-modal {
+            position: fixed;
+            inset: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.25s ease;
+        }
+
+        .about-modal {
+            z-index: 100;
+            background: rgba(15,23,42,0.45);
+            backdrop-filter: blur(12px);
+        }
+
+        .portal-modal {
+            z-index: 101;
+            background: rgba(15,23,42,0.6);
+            backdrop-filter: blur(12px);
+        }
+
+        .about-modal.active,
+        .portal-modal.active {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        .about-card {
+            position: relative;
+            width: min(92%, 700px);
+            padding: 2.5rem;
+            border: 1px solid var(--border-muted);
+            border-radius: 6px;
+            background: #FFFFFF;
+            box-shadow: 0 25px 50px rgba(0,0,0,0.15);
+        }
+
+        .about-card h2 {
+            margin-bottom: 1rem;
+            font-size: 2rem;
+            letter-spacing: -0.04em;
+        }
+
+        .about-card p {
+            margin-bottom: 0.9rem;
+            color: var(--text-secondary);
+            line-height: 1.65;
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 1.2rem;
+            right: 1.2rem;
+            border: 0;
+            background: transparent;
+            color: #64748B;
+            font-size: 1.25rem;
+            cursor: pointer;
+        }
+
+        .portal-card {
+            width: 95%;
+            max-width: 1200px;
+            height: 90%;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            position: relative;
+            border: 1px solid #1E293B;
+            border-radius: 8px;
+            background: #090D1A;
+        }
+
+        .portal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 1.5rem;
+            border-bottom: 1px solid #1E293B;
+            background: #090D1A;
+            color: #FFFFFF;
+        }
+
+        .portal-iframe {
+            width: 100%;
+            height: 100%;
+            border: 0;
+            background: #090D1A;
+        }
+
+        footer {
+            border-top: 1px solid var(--border-muted);
+            padding-top: 2.5rem;
+            margin-top: 4rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1.5rem;
+        }
+
+        .lock-indicator {
+            font-size: 0.75rem;
+            font-weight: 700;
+            font-family: SFMono-Regular, Consolas, monospace;
+            color: var(--accent-slate);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .legal-perimeter {
+            font-size: 0.725rem;
+            color: #94A3B8;
+            max-width: 950px;
+            text-align: center;
+            line-height: 1.65;
+        }
+
+        @media (max-width: 900px) {
+            .services-hero,
+            .section-head,
+            .capability-shell,
+            .connection-panel,
+            .final-cta {
+                grid-template-columns: 1fr;
+            }
+
+            .cap-summary {
+                min-height: 0;
+            }
+
+            .cap-signal {
+                margin-top: 2rem;
+            }
+
+            .problem-grid,
+            .engagement-grid {
+                grid-template-columns: repeat(2, minmax(0,1fr));
+            }
+
+            .healthcare-callout {
+                grid-template-columns: 1fr;
+            }
+
+            .healthcare-link {
+                justify-self: start;
+            }
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 1.5rem 1rem 2rem;
+            }
+
+            header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 1.25rem;
+            }
+
+            .nav-links {
+                width: 100%;
+                display: grid;
+                grid-template-columns: repeat(5, minmax(0, 1fr));
+                gap: 0.35rem;
+                margin-left: 0;
+                position: relative;
+            }
+
+            .nav-link-btn {
+                text-align: center;
+                font-size: 0.72rem;
+                padding: 0.4rem 0.1rem;
+                white-space: nowrap;
+            }
+
+            #open-portal-nav {
+                grid-column: 1 / -1;
+                width: 100%;
+                margin-top: 0.25rem;
+                padding: 0.8rem 1rem;
+            }
+
+            .network-ticker {
+                display: none;
+            }
+
+            .services-menu {
+                position: static;
+            }
+
+            .services-menu summary {
+                text-align: center;
+                font-size: 0.8rem;
+                padding: 0.4rem 0;
+            }
+
+            .services-dropdown {
+                position: absolute;
+                top: calc(100% + 0.75rem);
+                left: 0;
+                right: 0;
+                transform: none;
+                width: 100%;
+                margin: 0;
+                padding: 0.5rem;
+                grid-template-columns: 1fr;
+                box-shadow: 0 18px 40px rgba(15, 23, 42, 0.14);
+            }
+
+            .services-dropdown a {
+                padding: 0.7rem 0.85rem;
+            }
+
+            .services-dropdown span {
+                display: none;
+            }
+
+            main {
+                padding-top: 3.5rem;
+            }
+
+            .services-hero {
+                gap: 1.4rem;
+                padding-bottom: 4.25rem;
+            }
+
+            .services-hero h1 {
+                font-size: clamp(3.4rem, 16vw, 5.2rem);
+            }
+
+            .capability-jump {
+                position: relative;
+                top: auto;
+                grid-template-columns: repeat(2, minmax(0,1fr));
+                margin-bottom: 4rem;
+            }
+
+            .section {
+                padding: 4.25rem 0;
+            }
+
+            .section-head {
+                gap: 1rem;
+            }
+
+            .cap-summary,
+            .cap-detail {
+                padding: 1.5rem;
+            }
+
+            .cap-title {
+                margin-top: 2.6rem;
+            }
+
+            .detail-grid,
+            .problem-grid,
+            .engagement-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .problem-section,
+            .connection-panel,
+            .final-cta {
+                padding: 1.5rem;
+            }
+
+            .flow-row {
+                grid-template-columns: 34px 1fr;
+            }
+
+            .flow-row span {
+                display: none;
+            }
+
+            .healthcare-link,
+            .cta-button,
+            .secondary-button {
+                width: 100%;
+            }
+
+            .portal-card {
+                width: 100%;
+                height: 100%;
+                border-radius: 0;
+                border: 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    {{ partial "dcd-header.html" . }}
+
+    <main>
+        <section class="services-hero">
+            <div>
+                <div class="kicker">DCD Advisory // Services</div>
+
+                <h1>
+                    Start with the problem.
+                    <span>Build the right system.</span>
+                </h1>
+            </div>
+
+            <div class="hero-side">
+                <p>
+                    DCD Advisory is not organized around rigid packages. The work is organized around four
+                    capabilities that can stand alone or combine into one operating system: Brand, Web,
+                    Automation, and AI &amp; Data.
+                </p>
+
+                <div class="hero-proof" aria-label="DCD Advisory capabilities">
+                    <span><i></i> Brand</span>
+                    <span><i></i> Web</span>
+                    <span><i></i> Automation</span>
+                    <span><i></i> AI + Data</span>
+                </div>
+            </div>
+        </section>
+
+        <nav class="capability-jump" aria-label="Service capability navigation">
+            <a href="#brand">[01] Brand</a>
+            <a href="#web">[02] Web</a>
+            <a href="#automation">[03] Automation</a>
+            <a href="#ai-data">[04] AI + Data</a>
+        </nav>
+
+        <section class="section">
+            <div class="problem-section">
+                <div class="kicker">Problem-first by design</div>
+                <h2>You do not need to know which service you need before we talk.</h2>
+
+                <p>
+                    Most worthwhile projects cross boundaries. A new website may expose a broken intake process.
+                    A reporting problem may actually be a data-structure problem. A brand project may need production
+                    standards and digital infrastructure. DCD starts with the outcome and works backward.
+                </p>
+
+                <div class="problem-grid">
+                    <article class="problem-card">
+                        <span>[01]</span>
+                        <strong>“Our brand looks inconsistent everywhere.”</strong>
+                        <p>That may lead to identity reconstruction, guidelines, production standards, digital assets, and vendor-ready files.</p>
+                    </article>
+
+                    <article class="problem-card">
+                        <span>[02]</span>
+                        <strong>“Our website does not actually do anything for us.”</strong>
+                        <p>That may become a new site, intake flow, content system, analytics layer, portal, or connected customer experience.</p>
+                    </article>
+
+                    <article class="problem-card">
+                        <span>[03]</span>
+                        <strong>“We keep doing the same work manually.”</strong>
+                        <p>That may become Apps Script, API integration, routing logic, document generation, reporting, or exception-driven workflows.</p>
+                    </article>
+
+                    <article class="problem-card">
+                        <span>[04]</span>
+                        <strong>“We have data, but cannot use it.”</strong>
+                        <p>That may become a structured data layer, dashboards, extraction, classification, research tooling, or decision support.</p>
+                    </article>
+
+                    <article class="problem-card">
+                        <span>[05]</span>
+                        <strong>“Our tools do not talk to each other.”</strong>
+                        <p>That may require integration architecture connecting forms, email, files, databases, APIs, dashboards, and operational systems.</p>
+                    </article>
+
+                    <article class="problem-card">
+                        <span>[06]</span>
+                        <strong>“We know the outcome we want, but not what to build.”</strong>
+                        <p>That is a valid starting point. Discovery exists to determine the smallest useful system that can solve the real problem.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="section capability-block" id="brand">
+            <div class="capability-shell">
+                <div class="cap-summary">
+                    <span class="cap-index">[01 // BRAND]</span>
+                    <h2 class="cap-title">Brand &amp; Creative Systems</h2>
+
+                    <p>
+                        Brand work should survive beyond a logo file. DCD builds identity systems that can move
+                        from concept to digital channels, apparel, print, signage, vendors, and future applications
+                        without losing consistency.
+                    </p>
+
+                    <div class="cap-signal">
+                        <small>Best fit when</small>
+                        <strong>The visual identity needs to become a repeatable production system rather than a one-off design.</strong>
+                    </div>
+                </div>
+
+                <div class="cap-detail">
+                    <div class="detail-grid">
+                        <article class="detail-card">
+                            <span>Core deliverables</span>
+                            <h3>Identity Systems</h3>
+                            <ul>
+                                <li>Logo systems and variants</li>
+                                <li>Typography and color standards</li>
+                                <li>Visual direction and supporting assets</li>
+                                <li>Brand guideline systems</li>
+                            </ul>
+                        </article>
+
+                        <article class="detail-card">
+                            <span>Production</span>
+                            <h3>Real-World Usability</h3>
+                            <ul>
+                                <li>Vector reconstruction and cleanup</li>
+                                <li>Embroidery and one-color considerations</li>
+                                <li>Print, signage, apparel, and large-format assets</li>
+                                <li>Vendor-ready delivery structures</li>
+                            </ul>
+                        </article>
+
+                        <article class="detail-card">
+                            <span>Extensions</span>
+                            <h3>Digital + Campaign Assets</h3>
+                            <ul>
+                                <li>Social and digital templates</li>
+                                <li>Presentation and collateral systems</li>
+                                <li>Event, sponsorship, and promotional assets</li>
+                                <li>Website-aligned visual systems</li>
+                            </ul>
+                        </article>
+
+                        <article class="detail-card">
+                            <span>Can connect with</span>
+                            <h3>Web + Automation</h3>
+                            <p>
+                                The brand system can carry directly into a website, intake experience,
+                                sales collateral, automated documents, and operational templates.
+                            </p>
+                        </article>
+                    </div>
+
+                    <a class="proof-link" href="/work/petty-racing-gen5/">
+                        <span>
+                            <small>Proof in selected work</small>
+                            <strong>Petty Racing Gen5 // Brand Identity + Production System</strong>
+                        </span>
+                        <span>→</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section class="section capability-block" id="web">
+            <div class="capability-shell">
+                <div class="cap-summary">
+                    <span class="cap-index">[02 // WEB]</span>
+                    <h2 class="cap-title">Web &amp; Digital Experiences</h2>
+
+                    <p>
+                        DCD builds websites as working systems, not just pages. That can mean a marketing site,
+                        public archive, intake flow, portal, interactive dashboard, publishing platform, or a
+                        digital front end connected to the operation behind it.
+                    </p>
+
+                    <div class="cap-signal">
+                        <small>Best fit when</small>
+                        <strong>The website needs to publish, collect, route, explain, measure, or connect — not simply exist.</strong>
+                    </div>
+                </div>
+
+                <div class="cap-detail">
+                    <div class="detail-grid">
+                        <article class="detail-card">
+                            <span>Core builds</span>
+                            <h3>Websites + Platforms</h3>
+                            <ul>
+                                <li>Business and organization websites</li>
+                                <li>Landing pages and campaign systems</li>
+                                <li>Research archives and public-information sites</li>
+                                <li>Content and publishing systems</li>
+                            </ul>
+                        </article>
+
+                        <article class="detail-card">
+                            <span>Experience</span>
+                            <h3>Interactive Digital Tools</h3>
+                            <ul>
+                                <li>Forms and guided intake flows</li>
+                                <li>Dashboards and data views</li>
+                                <li>Searchable collections and archives</li>
+                                <li>Interactive explainers and decision-support interfaces</li>
+                            </ul>
+                        </article>
+
+                        <article class="detail-card">
+                            <span>Infrastructure</span>
+                            <h3>Measurement + Reliability</h3>
+                            <ul>
+                                <li>Analytics and event tracking</li>
+                                <li>SEO and structured metadata</li>
+                                <li>Static-site and cloud deployment workflows</li>
+                                <li>Maintainable content architecture</li>
+                            </ul>
+                        </article>
+
+                        <article class="detail-card">
+                            <span>Can connect with</span>
+                            <h3>Automation + AI</h3>
+                            <p>
+                                A web experience can feed structured intake, trigger workflows, expose
+                                dashboards, publish automated content, or become the interface to a larger data system.
+                            </p>
+                        </article>
+                    </div>
+
+                    <a class="proof-link" href="/work/lindsay-clancy-trial-intelligence/">
+                        <span>
+                            <small>Proof in selected work</small>
+                            <strong>Lindsay Clancy Trial Intelligence // Public Archive + Intelligence Platform</strong>
+                        </span>
+                        <span>→</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section class="section capability-block" id="automation">
+            <div class="capability-shell">
+                <div class="cap-summary">
+                    <span class="cap-index">[03 // AUTOMATION]</span>
+                    <h2 class="cap-title">Automation &amp; Operations</h2>
+
+                    <p>
+                        Automation is where repetitive work becomes infrastructure. DCD maps the process,
+                        structures the data, connects the tools, and builds the logic that keeps information
+                        moving without requiring someone to manually push every step.
+                    </p>
+
+                    <div class="cap-signal">
+                        <small>Best fit when</small>
+                        <strong>Your team is copying, reconciling, checking, routing, reporting, or generating the same things over and over.</strong>
+                    </div>
+                </div>
+
+                <div class="cap-detail">
+                    <div class="detail-grid">
+                        <article class="detail-card">
+                            <span>Workflow</span>
+                            <h3>Process Automation</h3>
+                            <ul>
+                                <li>Google Apps Script systems</li>
+                                <li>Workspace and Drive workflows</li>
+                                <li>Email and notification routing</li>
+                                <li>Document and report generation</li>
+                            </ul>
+                        </article>
+
+                        <article class="detail-card">
+                            <span>Integration</span>
+                            <h3>APIs + System Connections</h3>
+                            <ul>
+                                <li>API-driven integrations</li>
+                                <li>Forms to structured records</li>
+                                <li>File and CSV ingestion workflows</li>
+                                <li>Cross-system synchronization and routing</li>
+                            </ul>
+                        </article>
+
+                        <article class="detail-card">
+                            <span>Operations</span>
+                            <h3>Exception-Driven Work</h3>
+                            <ul>
+                                <li>Reconciliation and comparison logic</li>
+                                <li>Issue queues and review workflows</li>
+                                <li>Scheduled reports and monitoring</li>
+                                <li>Dashboards that surface what needs attention</li>
+                            </ul>
+                        </article>
+
+                        <article class="detail-card">
+                            <span>Can connect with</span>
+                            <h3>Web + AI + Data</h3>
+                            <p>
+                                Automation becomes significantly more useful when it operates on structured data,
+                                connects to the customer-facing experience, and feeds analysis or AI-assisted workflows.
+                            </p>
+                        </article>
+                    </div>
+
+                    <a class="proof-link" href="/work/mindsett-mental-health/">
+                        <span>
+                            <small>Proof in selected work</small>
+                            <strong>Mindsett Mental Health // Secure Infrastructure + Automation</strong>
+                        </span>
+                        <span>→</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section class="section capability-block" id="ai-data">
+            <div class="capability-shell">
+                <div class="cap-summary">
+                    <span class="cap-index">[04 // AI &amp; DATA]</span>
+                    <h2 class="cap-title">AI &amp; Data Systems</h2>
+
+                    <p>
+                        AI becomes useful when the surrounding data and workflow are useful. DCD builds the
+                        structure underneath the model: source collection, normalization, extraction, classification,
+                        analysis, dashboards, research tools, and decision-support interfaces.
+                    </p>
+
+                    <div class="cap-signal">
+                        <small>Best fit when</small>
+                        <strong>You have documents, records, operational data, or repeatable decisions that could become a structured analytical system.</strong>
+                    </div>
+                </div>
+
+                <div class="cap-detail">
+                    <div class="detail-grid">
+                        <article class="detail-card">
+                            <span>Data layer</span>
+                            <h3>Structure + Pipelines</h3>
+                            <ul>
+                                <li>Data normalization and canonical records</li>
+                                <li>Extraction and classification pipelines</li>
+                                <li>Evidence, research, and source-linked datasets</li>
+                                <li>Structured inputs for future tools</li>
+                            </ul>
+                        </article>
+
+                        <article class="detail-card">
+                            <span>AI applications</span>
+                            <h3>Assistants + Knowledge Systems</h3>
+                            <ul>
+                                <li>AI-assisted research and triage</li>
+                                <li>Knowledge retrieval and summarization</li>
+                                <li>Classification and structured extraction</li>
+                                <li>Workflow-specific copilots and analysis tools</li>
+                            </ul>
+                        </article>
+
+                        <article class="detail-card">
+                            <span>Analysis</span>
+                            <h3>Measure + Model</h3>
+                            <ul>
+                                <li>Dashboards and analytical views</li>
+                                <li>Scoring and weighting systems</li>
+                                <li>Forecasting when a defensible target and data exist</li>
+                                <li>Explainable decision-support models</li>
+                            </ul>
+                        </article>
+
+                        <article class="detail-card">
+                            <span>Guardrails</span>
+                            <h3>Useful, Not Magical</h3>
+                            <p>
+                                DCD separates deterministic calculation from AI inference and predictive modeling.
+                                Claims should match the quality of the source data, methodology, and defined target.
+                            </p>
+                        </article>
+                    </div>
+
+                    <a class="proof-link" href="/work/lindsay-clancy-trial-intelligence/">
+                        <span>
+                            <small>Proof in selected work</small>
+                            <strong>Lindsay Clancy Trial Intelligence // Evidence + Analytical System</strong>
+                        </span>
+                        <span>→</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="connection-panel">
+                <div>
+                    <div class="kicker">The real advantage</div>
+                    <h2>The four capabilities are stronger when they connect.</h2>
+
+                    <p>
+                        A polished website sitting on top of a broken process is still a broken process.
+                        A useful AI model without structured data is difficult to trust. An automation without
+                        a usable front end creates friction somewhere else. DCD can build the connective tissue.
+                    </p>
+                </div>
+
+                <div class="connection-flow" aria-label="Connected DCD capability example">
+                    <div class="flow-row">
+                        <b>01</b>
+                        <strong>Brand creates a consistent customer experience</strong>
+                        <span>BRAND</span>
+                    </div>
+                    <div class="flow-row">
+                        <b>02</b>
+                        <strong>Web collects the right structured information</strong>
+                        <span>WEB</span>
+                    </div>
+                    <div class="flow-row">
+                        <b>03</b>
+                        <strong>Automation routes and processes the work</strong>
+                        <span>AUTOMATE</span>
+                    </div>
+                    <div class="flow-row">
+                        <b>04</b>
+                        <strong>Data becomes measurable and reusable</strong>
+                        <span>DATA</span>
+                    </div>
+                    <div class="flow-row">
+                        <b>05</b>
+                        <strong>AI assists where inference actually adds value</strong>
+                        <span>AI</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="section-head">
+                <div>
+                    <div class="kicker">Ways to engage</div>
+                    <h2>One focused build or an interconnected system.</h2>
+                </div>
+
+                <p>
+                    The scope should match the problem. DCD can solve one defined need, connect several capabilities,
+                    or build a foundation designed to expand as the organization learns what works.
+                </p>
+            </div>
+
+            <div class="engagement-grid">
+                <article class="engagement-card">
+                    <span class="cap-index">[01 // FOCUSED BUILD]</span>
+                    <h3>One clear deliverable</h3>
+                    <p>
+                        A brand system, website, automation, dashboard, research tool, or other defined build
+                        with a clear outcome and handoff.
+                    </p>
+                </article>
+
+                <article class="engagement-card">
+                    <span class="cap-index">[02 // CONNECTED SYSTEM]</span>
+                    <h3>Several capabilities working together</h3>
+                    <p>
+                        For problems where the website, workflow, data, integrations, and AI layer need to be
+                        designed as one system rather than separate projects.
+                    </p>
+                </article>
+
+                <article class="engagement-card">
+                    <span class="cap-index">[03 // EVOLVING INFRASTRUCTURE]</span>
+                    <h3>Build the foundation, then extend it</h3>
+                    <p>
+                        Start with the highest-value layer, structure it correctly, document it, and add new
+                        integrations, automations, dashboards, or AI tools as the need becomes clear.
+                    </p>
+                </article>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="healthcare-callout">
+                <div>
+                    <div class="kicker">Healthcare specialization</div>
+                    <h2>Behavioral health and psychiatry have a dedicated DCD path.</h2>
+
+                    <p>
+                        Healthcare work can require additional attention to secure infrastructure, regulated
+                        workflows, access controls, data handling, operational complexity, and vendor configuration.
+                        DCD maintains a dedicated healthcare specialization alongside the broader capabilities above.
+                    </p>
+                </div>
+
+                <a href="/healthcare/" class="healthcare-link">Explore Healthcare →</a>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="section-head">
+                <div>
+                    <div class="kicker">Questions</div>
+                    <h2>What working with DCD actually means.</h2>
+                </div>
+
+                <p>
+                    The most important thing is not arriving with a perfect technical specification.
+                    It is being able to describe what is not working and what a better outcome would look like.
+                </p>
+            </div>
+
+            <div class="faq-grid">
+                <details class="faq-item">
+                    <summary>Do I need to know which of the four capabilities I need?</summary>
+                    <p>
+                        No. Start with the problem, current tools, constraints, and desired outcome. The discovery
+                        process determines whether the solution belongs in one capability or requires several.
+                    </p>
+                </details>
+
+                <details class="faq-item">
+                    <summary>Can DCD work with the systems we already use?</summary>
+                    <p>
+                        Often, yes. A major part of the systems-first approach is deciding what should stay,
+                        what should connect, what should be automated, and what actually needs to be replaced.
+                    </p>
+                </details>
+
+                <details class="faq-item">
+                    <summary>Is every project an AI project?</summary>
+                    <p>
+                        No. AI is one capability, not the default answer. If deterministic rules, better data,
+                        a simpler workflow, or ordinary software solves the problem more reliably, that is the better build.
+                    </p>
+                </details>
+
+                <details class="faq-item">
+                    <summary>Can one project expand later?</summary>
+                    <p>
+                        Yes. DCD intentionally favors reusable foundations: structured data, clean architecture,
+                        documented workflows, production-ready assets, and interfaces that can support future extensions.
+                    </p>
+                </details>
+
+                <details class="faq-item">
+                    <summary>Do you only work in healthcare?</summary>
+                    <p>
+                        No. Healthcare is a major specialization, but DCD also applies the same systems-first method
+                        to motorsports and sports, research and public information, professional services, entertainment,
+                        legal and record-intensive matters, and other organizations with custom operational problems.
+                    </p>
+                </details>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="final-cta">
+                <div>
+                    <div class="kicker">Start a project</div>
+                    <h2>Bring the problem. We’ll determine what should be built.</h2>
+
+                    <p>
+                        You do not need to arrive asking for an “AI project,” “automation project,” or “website package.”
+                        Explain the friction and the outcome. The system comes next.
+                    </p>
+                </div>
+
+                <div class="final-actions">
+                    <button class="cta-button" id="open-portal-services">
+                        Start a Project <span>→</span>
+                    </button>
+
+                    <a class="secondary-button" href="/work/">
+                        See the Work
+                    </a>
+
+                    <a class="secondary-button" href="/">
+                        Back to DCD Advisory
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div class="about-modal" id="about-overlay">
+        <div class="about-card">
+            <button class="close-btn" id="close-about" aria-label="Close About">&times;</button>
+
+            <h2>Built for problems that do not fit neatly inside a template.</h2>
+
+            <p>
+                DCD Advisory combines creative and technical capabilities around the actual problem —
+                from identity systems and digital experiences to automation, dashboards, AI tools,
+                and custom operational workflows.
+            </p>
+
+            <p>
+                The deliverable changes, but the method stays consistent: understand the problem,
+                design the system, build it properly, and connect the pieces that should work together.
+            </p>
+        </div>
+    </div>
+
+    {{ partial "dcd-project-portal.html" . }}
+    {{ partial "dcd-footer.html" . }}
+
+    <script>
+        const WEB_APP_URL = "https://script.google.com/macros/s/AKfycbzMfGEJkJIlbzKuTJhGmYX2OG5FTXkpLpQaAObOTXuG6lo5dSJPQH0XWScZCI3m-AQB3g/exec";
+
+        document.addEventListener("DOMContentLoaded", () => {
+            const brandHome = document.getElementById("brand-home");
+
+            if (brandHome) {
+                brandHome.addEventListener("click", () => {
+                    window.location.href = "/";
+                });
+            }
+
+            const openAboutBtn = document.getElementById("open-about");
+            const closeAboutBtn = document.getElementById("close-about");
+            const aboutOverlay = document.getElementById("about-overlay");
+
+            if (openAboutBtn && closeAboutBtn && aboutOverlay) {
+                openAboutBtn.addEventListener("click", () => {
+                    aboutOverlay.classList.add("active");
+                });
+
+                closeAboutBtn.addEventListener("click", () => {
+                    aboutOverlay.classList.remove("active");
+                });
+
+                aboutOverlay.addEventListener("click", (event) => {
+                    if (event.target === aboutOverlay) {
+                        aboutOverlay.classList.remove("active");
+                    }
+                });
+            }
+
+            const openPortalNavBtn = document.getElementById("open-portal-nav");
+            const openPortalServicesBtn = document.getElementById("open-portal-services");
+            const closePortalBtn = document.getElementById("close-portal");
+            const portalOverlay = document.getElementById("portal-overlay");
+            const portalFrame = document.getElementById("portal-frame");
+
+            function openProjectPortal() {
+                if (!portalOverlay || !portalFrame) return;
+
+                if (portalFrame.src === "about:blank" || portalFrame.src === "") {
+                    portalFrame.src = WEB_APP_URL;
+                }
+
+                portalOverlay.classList.add("active");
+            }
+
+            if (openPortalNavBtn) {
+                openPortalNavBtn.addEventListener("click", openProjectPortal);
+            }
+
+            if (openPortalServicesBtn) {
+                openPortalServicesBtn.addEventListener("click", openProjectPortal);
+            }
+
+            if (closePortalBtn && portalOverlay) {
+                closePortalBtn.addEventListener("click", () => {
+                    portalOverlay.classList.remove("active");
+                });
+
+                portalOverlay.addEventListener("click", (event) => {
+                    if (event.target === portalOverlay) {
+                        portalOverlay.classList.remove("active");
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+</html>
