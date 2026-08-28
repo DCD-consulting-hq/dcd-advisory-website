@@ -724,6 +724,12 @@
             background: #FFFFFF;
         }
 
+        #work-petty,
+        #work-mindsett,
+        #work-lindsay {
+            scroll-margin-top: 2rem;
+        }
+
         .work-feature {
             min-height: 430px;
             display: flex;
@@ -872,6 +878,7 @@
             align-items: center;
             justify-content: center;
             gap: 0.55rem;
+            width: 100%;
             margin-top: 1.15rem;
             padding: 0.8rem 1rem;
             background: var(--accent-slate);
@@ -891,6 +898,26 @@
             transform: translateY(-1px);
             background: #111C31;
             box-shadow: 0 9px 22px rgba(15, 23, 42, 0.18);
+        }
+
+        .work-scope-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.45rem;
+            margin-top: 1.15rem;
+        }
+
+        .work-scope-row span {
+            padding: 0.48rem 0.62rem;
+            border: 1px solid var(--border-muted);
+            border-radius: 4px;
+            background: var(--surface-soft);
+            color: #64748B;
+            font-family: SFMono-Regular, Consolas, monospace;
+            font-size: 0.62rem;
+            font-weight: 800;
+            letter-spacing: 0.045em;
+            text-transform: uppercase;
         }
 
         .confidential-note {
@@ -936,6 +963,19 @@
             color: var(--text-secondary);
             font-size: 0.79rem;
             line-height: 1.5;
+        }
+
+        .industry-proof {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.35rem;
+            margin-top: 1rem;
+            color: var(--status-cyan);
+            font-family: SFMono-Regular, Consolas, monospace;
+            font-size: 0.62rem;
+            font-weight: 800;
+            letter-spacing: 0.055em;
+            text-transform: uppercase;
         }
 
         a.industry-card {
@@ -1278,6 +1318,16 @@
             flex-grow: 1;
         }
 
+        .about-kicker {
+            margin-bottom: 0.65rem;
+            color: var(--status-cyan);
+            font-family: SFMono-Regular, Consolas, monospace;
+            font-size: 0.66rem;
+            font-weight: 800;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+        }
+
         .about-content h2 {
             font-size: 2rem;
             font-weight: 800;
@@ -1291,6 +1341,37 @@
             color: var(--text-secondary);
             line-height: 1.65;
             margin-bottom: 1rem;
+        }
+
+        .about-principles {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 0.55rem;
+            margin-top: 1.3rem;
+        }
+
+        .about-principle {
+            padding: 0.8rem;
+            border: 1px solid var(--border-muted);
+            border-radius: 4px;
+            background: var(--surface-soft);
+        }
+
+        .about-principle span {
+            display: block;
+            margin-bottom: 0.3rem;
+            color: var(--status-cyan);
+            font-family: SFMono-Regular, Consolas, monospace;
+            font-size: 0.58rem;
+            font-weight: 800;
+            letter-spacing: 0.06em;
+        }
+
+        .about-principle strong {
+            display: block;
+            color: var(--accent-slate);
+            font-size: 0.76rem;
+            line-height: 1.35;
         }
 
         .close-btn {
@@ -1480,7 +1561,6 @@
         object-position: center;
         display: block;
     }
-}
 
             header {
                 flex-direction: column;
@@ -1491,16 +1571,17 @@
             .nav-links {
                 width: 100%;
                 display: grid;
-                grid-template-columns: repeat(4, 1fr);
-                gap: 0.5rem;
+                grid-template-columns: repeat(5, minmax(0, 1fr));
+                gap: 0.35rem;
                 margin-left: 0;
                 position: relative;
             }
 
             .nav-link-btn {
                 text-align: center;
-                font-size: 0.8rem;
-                padding: 0.4rem 0;
+                font-size: 0.72rem;
+                padding: 0.4rem 0.1rem;
+                white-space: nowrap;
             }
 
             #open-portal-nav {
@@ -1643,6 +1724,10 @@
                 width: 120px;
                 height: 120px;
                 margin: 0 auto;
+            }
+
+            .about-principles {
+                grid-template-columns: 1fr;
             }
 
             .portal-card {
@@ -1883,7 +1968,7 @@
             </div>
 
             <div class="work-grid">
-                <article class="work-feature">
+                <article class="work-feature" id="work-petty">
                     <div class="work-visual work-visual-image">
                         <img
                             class="work-image"
@@ -1902,11 +1987,17 @@
                             <div><b>System:</b> Primary and compact logo configurations, PRG5 abbreviated marks, one-color standards, clear-space rules, production guidance, and organized vendor-ready artwork.</div>
                             <div><b>Outcome:</b> A complete reusable brand system with scalable SVG, EPS, PDF, PNG, and JPG resources built for real-world production and handoff.</div>
                         </div>
+
+                        <div class="work-scope-row" aria-label="Petty Racing Gen5 project scope">
+                            <span>Brand Identity</span>
+                            <span>Production System</span>
+                            <span>Vendor Delivery</span>
+                        </div>
                     </div>
                 </article>
 
                 <div class="work-stack">
-                    <a class="work-card work-card-link" href="/healthcare/">
+                    <a class="work-card work-card-link" id="work-mindsett" href="/healthcare/">
     <div class="work-card-visual">
         <img
             src="/images/work/mindsett-healthcare-systems-feature.jpg"
@@ -1948,7 +2039,7 @@
     </span>
 </a>
 
-                    <a class="work-card work-card-link" href="https://lindsayclancytrial.com/" target="_blank" rel="noopener">
+                    <a class="work-card work-card-link" id="work-lindsay" href="https://lindsayclancytrial.com/" target="_blank" rel="noopener">
                         <div class="work-card-visual">
                             <img
                                 src="/images/work/lindsay-clancy-trial-intelligence-feature.webp"
@@ -1974,42 +2065,46 @@
             </p>
         </section>
 
-        <section class="section-block">
+        <section class="section-block" id="industries">
             <div class="section-heading">
                 <div>
-                    <div class="section-kicker">Built across industries</div>
-                    <h2>Different industries. Different problems. The same method.</h2>
+                    <div class="section-kicker">Proof across industries</div>
+                    <h2>Different environments. Same systems-first method.</h2>
                 </div>
 
                 <p>
-                    DCD is capability-first rather than industry-limited. These are markets and
-                    operating environments where the same brand, web, automation, and AI disciplines apply.
+                    Current work spans healthcare operations, motorsports identity systems, and
+                    public-information research platforms. DCD stays capability-first, then adapts
+                    the build to the operating environment.
                 </p>
             </div>
 
             <div class="industry-grid">
-                <a href="/healthcare/" class="industry-card">
+                <a href="#work-mindsett" class="industry-card">
                     <span class="industry-index">[01 // SPECIALIZATION]</span>
                     <h3>Healthcare</h3>
-                    <p>Behavioral health operations, secure workflows, automation, data systems, and practice infrastructure.</p>
+                    <p>Secure operations, workflow automation, data visibility, reconciliation systems, and practice infrastructure.</p>
+                    <span class="industry-proof">Selected work available <span aria-hidden="true">&uarr;</span></span>
+                </a>
+
+                <a href="#work-petty" class="industry-card">
+                    <span class="industry-index">[02 // SELECTED WORK]</span>
+                    <h3>Motorsports &amp; Sports</h3>
+                    <p>Identity systems, production standards, digital assets, sponsorship-ready materials, and scalable brand infrastructure.</p>
+                    <span class="industry-proof">Selected work available <span aria-hidden="true">&uarr;</span></span>
+                </a>
+
+                <a href="#work-lindsay" class="industry-card">
+                    <span class="industry-index">[03 // SELECTED WORK]</span>
+                    <h3>Research, Media &amp; Public Information</h3>
+                    <p>Source-linked archives, publishing systems, research workflows, public-data organization, and AI-assisted analysis.</p>
+                    <span class="industry-proof">Selected work available <span aria-hidden="true">&uarr;</span></span>
                 </a>
 
                 <div class="industry-card">
-                    <span class="industry-index">[02 // APPLICATION]</span>
-                    <h3>Motorsports &amp; Sports</h3>
-                    <p>Brand systems, sponsorship assets, digital experiences, workflow automation, research, and data tools.</p>
-                </div>
-
-                <div class="industry-card">
-                    <span class="industry-index">[03 // APPLICATION]</span>
-                    <h3>Music &amp; Entertainment</h3>
-                    <p>Identity, websites, press and booking systems, content workflows, digital assets, and automation.</p>
-                </div>
-
-                <div class="industry-card">
                     <span class="industry-index">[04 // APPLICATION]</span>
-                    <h3>Professional Services</h3>
-                    <p>Lead systems, websites, internal workflows, Workspace automation, dashboards, and AI-assisted operations.</p>
+                    <h3>Professional Services &amp; Entertainment</h3>
+                    <p>Websites, lead and booking systems, digital assets, internal workflows, dashboards, and AI-assisted operations.</p>
                 </div>
             </div>
         </section>
@@ -2158,26 +2253,47 @@
             </div>
 
             <div class="about-content">
-                <h2>About Chadwick</h2>
+                <div class="about-kicker">DCD Advisory // About</div>
+                <h2>Built for problems that do not fit neatly inside a template.</h2>
+
                 <p>
-                    I build systems. My approach starts with understanding the mission, identifying what is not working,
-                    and building something dependable enough to solve the real problem.
+                    I built DCD Advisory around a simple idea: the right solution is not always a single service.
+                    Sometimes the problem is the brand. Sometimes it is the website, the workflow, the data, or the
+                    systems connecting all of them.
                 </p>
+
                 <p>
-                    That can mean rebuilding a brand from rough artwork, designing a website, automating an administrative
-                    process, connecting a company’s Google Workspace, developing an AI research system, or building an
-                    entirely custom operational tool.
+                    My role is to understand the mission, find the friction, and build the right combination of creative
+                    and technical infrastructure around the actual problem — from identity systems and digital experiences
+                    to automation, dashboards, AI tools, and custom operational workflows.
                 </p>
+
                 <p>
-                    DCD Advisory exists for projects that do not fit neatly inside a template. The deliverable changes,
-                    but the method stays consistent: understand the problem, design the system, build it properly, and
-                    connect the pieces that need to work together.
+                    The deliverable changes, but the method stays consistent: map what matters, design the system,
+                    build it properly, and connect the pieces that should work together.
                 </p>
+
                 <p>
-                    Behavioral healthcare remains an important specialization, with deep experience in complex workflows,
-                    sensitive information, automation, reporting, and operational systems — but the same systems-first
-                    approach applies across industries.
+                    Healthcare remains an important DCD specialization, particularly where secure workflows, reporting,
+                    automation, and operational complexity intersect. The same systems-first approach extends to
+                    motorsports, research and media, professional services, entertainment, and other organizations
+                    that need something more tailored than an off-the-shelf answer.
                 </p>
+
+                <div class="about-principles" aria-label="DCD Advisory working principles">
+                    <div class="about-principle">
+                        <span>[01]</span>
+                        <strong>Understand the real problem</strong>
+                    </div>
+                    <div class="about-principle">
+                        <span>[02]</span>
+                        <strong>Build the right system</strong>
+                    </div>
+                    <div class="about-principle">
+                        <span>[03]</span>
+                        <strong>Connect what should work together</strong>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
