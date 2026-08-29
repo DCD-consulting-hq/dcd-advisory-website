@@ -1,0 +1,1736 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>DCD Advisory | Pricing & Engagements</title>
+    <meta name="description" content="DCD Advisory engagement pricing for discovery, focused launches, connected systems, custom builds, and ongoing systems partnerships.">
+    <link rel="canonical" href="{{ .Permalink }}">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ProfessionalService",
+      "name": "DCD Advisory",
+      "legalName": "DCD Consulting",
+      "url": {{ .Permalink | jsonify }},
+      "description": "DCD Advisory builds brand, web, automation, AI, and data systems around real business problems.",
+      "priceRange": "$$$"
+    }
+    </script>
+
+    <style>
+:root {
+            --bg-canvas: #FAFAFA;
+            --text-primary: #0F172A;
+            --text-secondary: #475569;
+            --accent-slate: #0F172A;
+            --border-muted: #E2E8F0;
+            --surface-card: #FFFFFF;
+            --surface-soft: #F8FAFC;
+            --status-cyan: #06B6D4;
+            --neural-green: #10B981;
+            --terminal-bg: #090D1A;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 2rem;
+        }
+
+        body {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 2.5rem 2rem;
+            background: var(--bg-canvas);
+            color: var(--text-primary);
+            font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, sans-serif;
+            letter-spacing: -0.02em;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        body::before {
+            content: "";
+            position: fixed;
+            inset: 0;
+            z-index: -1;
+            pointer-events: none;
+            opacity: 0.7;
+            background-image:
+                linear-gradient(var(--border-muted) 1px, transparent 1px),
+                linear-gradient(90deg, var(--border-muted) 1px, transparent 1px);
+            background-size: 40px 40px;
+        }
+
+        a {
+            color: inherit;
+        }
+
+        button,
+        summary {
+            font-family: inherit;
+        }
+
+        header,
+        main,
+        footer {
+            width: 100%;
+            max-width: 1100px;
+            position: relative;
+            z-index: 10;
+        }
+
+        /* =========================================================
+           SHARED HEADER — MATCHES HOMEPAGE / OTHER PRIMARY PAGES
+           ========================================================= */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid var(--border-muted);
+            padding-bottom: 1.5rem;
+            z-index: 100;
+        }
+
+        .brand-container {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            cursor: pointer;
+        }
+
+        .brand-logo {
+            width: 28px;
+            height: 28px;
+            flex-shrink: 0;
+            transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .brand-container:hover .brand-logo {
+            transform: rotate(12deg) scale(1.08);
+        }
+
+        .brand-text {
+            font-size: 1.15rem;
+            font-weight: 800;
+            letter-spacing: -0.04em;
+            text-transform: uppercase;
+            color: var(--accent-slate);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 1.5rem;
+            align-items: center;
+            margin-left: auto;
+        }
+
+        .nav-link-btn {
+            background: none;
+            border: none;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: color 0.2s ease;
+            text-decoration: none;
+            font-family: inherit;
+        }
+
+        .nav-link-btn:hover {
+            color: var(--accent-slate);
+        }
+
+        .services-menu {
+            position: relative;
+        }
+
+        .services-menu summary {
+            list-style: none;
+        }
+
+        .services-menu summary::-webkit-details-marker {
+            display: none;
+        }
+
+        .services-menu summary::after {
+            content: "⌄";
+            margin-left: 0.35rem;
+            font-size: 0.65rem;
+            color: #94A3B8;
+        }
+
+        .services-menu[open] summary::after {
+            content: "⌃";
+        }
+
+        .services-dropdown {
+            position: absolute;
+            top: calc(100% + 0.75rem);
+            left: 50%;
+            transform: translateX(-50%);
+            width: min(440px, calc(100vw - 2rem));
+            background: #FFFFFF;
+            border: 1px solid var(--border-muted);
+            border-radius: 6px;
+            padding: 0.5rem;
+            box-shadow: 0 18px 40px rgba(15, 23, 42, 0.14);
+            z-index: 1000;
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 0.25rem;
+        }
+
+        .services-dropdown a {
+            display: flex;
+            flex-direction: column;
+            gap: 0.15rem;
+            padding: 0.7rem 0.8rem;
+            border-radius: 4px;
+            text-decoration: none;
+            text-align: left;
+            transition: background 0.2s ease;
+        }
+
+        .services-dropdown a:hover {
+            background: #F8FAFC;
+        }
+
+        .services-dropdown strong {
+            color: var(--accent-slate);
+            font-size: 0.82rem;
+            line-height: 1.3;
+        }
+
+        .services-dropdown span {
+            color: var(--text-secondary);
+            font-size: 0.7rem;
+            line-height: 1.35;
+        }
+
+        .services-dropdown .services-view-all {
+            grid-column: 1 / -1;
+            margin-top: 0.25rem;
+            padding-top: 0.75rem;
+            border-top: 1px solid var(--border-muted);
+            color: var(--accent-slate);
+            font-size: 0.78rem;
+            font-weight: 700;
+        }
+
+        #open-portal-nav {
+            background: var(--accent-slate);
+            color: #FFFFFF;
+            padding: 0.65rem 1rem;
+            border-radius: 4px;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        #open-portal-nav:hover {
+            color: #FFFFFF;
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(15, 23, 42, 0.12);
+        }
+
+        .network-ticker {
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            border: 1px solid var(--border-muted);
+            padding: 0.5rem 0.9rem;
+            border-radius: 4px;
+            box-shadow: 0 1px 2px rgba(0,0,0,0.01);
+        }
+
+        .ticker-dot {
+            width: 6px;
+            height: 6px;
+            background-color: var(--status-cyan);
+            border-radius: 50%;
+            animation: pulse-glow 2s infinite;
+        }
+
+        .ticker-text {
+            font-size: 0.65rem;
+            font-weight: 700;
+            font-family: SFMono-Regular, Consolas, monospace;
+            color: var(--text-primary);
+            letter-spacing: 0.05em;
+        }
+
+        @keyframes pulse-glow {
+            0%, 100% { opacity: 0.55; box-shadow: 0 0 0 rgba(6,182,212,0); }
+            50% { opacity: 1; box-shadow: 0 0 12px rgba(6,182,212,0.35); }
+        }
+
+        /* =========================================================
+           SERVICES PAGE
+           ========================================================= */
+        main {
+            padding-top: 4.5rem;
+        }
+
+        .kicker {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.55rem;
+            margin-bottom: 1rem;
+            color: #64748B;
+            font-family: SFMono-Regular, Consolas, monospace;
+            font-size: 0.72rem;
+            font-weight: 800;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+        }
+
+        .kicker::before {
+            content: "";
+            width: 22px;
+            height: 2px;
+            background: var(--status-cyan);
+        }
+
+        .services-hero {
+            display: grid;
+            grid-template-columns: minmax(0, 1.15fr) minmax(300px, 0.85fr);
+            gap: 4rem;
+            align-items: end;
+            padding-bottom: 5.5rem;
+        }
+
+        .services-hero h1 {
+            max-width: 760px;
+            font-size: clamp(3.8rem, 8vw, 6.8rem);
+            line-height: 0.91;
+            letter-spacing: -0.067em;
+            color: var(--accent-slate);
+        }
+
+        .services-hero h1 span {
+            display: block;
+            color: #64748B;
+            font-weight: 750;
+        }
+
+        .hero-side p {
+            color: var(--text-secondary);
+            font-size: 1.05rem;
+            line-height: 1.72;
+        }
+
+        .hero-proof {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.55rem 1rem;
+            margin-top: 1.4rem;
+            color: #64748B;
+            font-family: SFMono-Regular, Consolas, monospace;
+            font-size: 0.66rem;
+            font-weight: 800;
+            text-transform: uppercase;
+        }
+
+        .hero-proof span {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+
+        .hero-proof i {
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: var(--neural-green);
+            box-shadow: 0 0 0 4px rgba(16,185,129,0.08);
+        }
+
+        .capability-jump {
+            position: sticky;
+            top: 1rem;
+            z-index: 40;
+            display: grid;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            gap: 1px;
+            overflow: hidden;
+            margin-bottom: 5.5rem;
+            border: 1px solid var(--border-muted);
+            border-radius: 6px;
+            background: var(--border-muted);
+            box-shadow: 0 10px 24px rgba(15,23,42,0.05);
+        }
+
+        .capability-jump a {
+            padding: 0.95rem 0.8rem;
+            background: rgba(255,255,255,0.95);
+            text-align: center;
+            text-decoration: none;
+            color: var(--text-secondary);
+            font-family: SFMono-Regular, Consolas, monospace;
+            font-size: 0.67rem;
+            font-weight: 800;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+            transition: background 0.2s ease, color 0.2s ease;
+        }
+
+        .capability-jump a:hover {
+            background: var(--accent-slate);
+            color: #FFFFFF;
+        }
+
+        .section {
+            padding: 5.75rem 0;
+            border-top: 1px solid var(--border-muted);
+        }
+
+        .section-head {
+            display: grid;
+            grid-template-columns: minmax(0, 1.2fr) minmax(280px, 0.8fr);
+            gap: 3rem;
+            align-items: end;
+            margin-bottom: 2.5rem;
+        }
+
+        .section-head h2,
+        .cap-title,
+        .problem-section h2,
+        .connection-panel h2,
+        .final-cta h2 {
+            font-size: clamp(2.35rem, 5vw, 4.25rem);
+            line-height: 1;
+            letter-spacing: -0.055em;
+            color: var(--accent-slate);
+        }
+
+        .section-head p {
+            max-width: 520px;
+            color: var(--text-secondary);
+            line-height: 1.7;
+        }
+
+        /* Individual capability deep-dives */
+        .capability-block {
+            scroll-margin-top: 5.5rem;
+        }
+
+        .capability-shell {
+            display: grid;
+            grid-template-columns: minmax(280px, 0.78fr) minmax(0, 1.22fr);
+            gap: 1px;
+            overflow: hidden;
+            border: 1px solid var(--border-muted);
+            border-radius: 8px;
+            background: var(--border-muted);
+        }
+
+        .cap-summary,
+        .cap-detail {
+            background: #FFFFFF;
+        }
+
+        .cap-summary {
+            min-height: 570px;
+            display: flex;
+            flex-direction: column;
+            padding: 2rem;
+        }
+
+        .cap-index {
+            color: var(--status-cyan);
+            font-family: SFMono-Regular, Consolas, monospace;
+            font-size: 0.68rem;
+            font-weight: 800;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+        }
+
+        .cap-title {
+            margin: 3.5rem 0 1rem;
+            font-size: clamp(2.35rem, 4vw, 3.65rem);
+        }
+
+        .cap-summary > p {
+            color: var(--text-secondary);
+            line-height: 1.7;
+        }
+
+        .cap-signal {
+            margin-top: auto;
+            padding: 1rem;
+            border: 1px solid var(--border-muted);
+            border-radius: 5px;
+            background: var(--surface-soft);
+        }
+
+        .cap-signal small {
+            display: block;
+            margin-bottom: 0.4rem;
+            color: #94A3B8;
+            font-family: SFMono-Regular, Consolas, monospace;
+            font-size: 0.58rem;
+            font-weight: 800;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+        }
+
+        .cap-signal strong {
+            display: block;
+            font-size: 0.86rem;
+            line-height: 1.5;
+        }
+
+        .cap-detail {
+            padding: 2rem;
+        }
+
+        .detail-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 1rem;
+        }
+
+        .detail-card {
+            min-height: 190px;
+            padding: 1.25rem;
+            border: 1px solid var(--border-muted);
+            border-radius: 5px;
+            background: var(--surface-soft);
+        }
+
+        .detail-card span {
+            display: block;
+            margin-bottom: 1.6rem;
+            color: #94A3B8;
+            font-family: SFMono-Regular, Consolas, monospace;
+            font-size: 0.58rem;
+            font-weight: 800;
+            letter-spacing: 0.055em;
+            text-transform: uppercase;
+        }
+
+        .detail-card h3 {
+            margin-bottom: 0.55rem;
+            font-size: 1rem;
+            letter-spacing: -0.025em;
+        }
+
+        .detail-card p,
+        .detail-card li {
+            color: var(--text-secondary);
+            font-size: 0.78rem;
+            line-height: 1.55;
+        }
+
+        .detail-card ul {
+            display: grid;
+            gap: 0.34rem;
+            padding-left: 1rem;
+        }
+
+        .proof-link {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 1rem;
+            margin-top: 1rem;
+            padding: 1rem 1.1rem;
+            border-radius: 5px;
+            background: var(--accent-slate);
+            color: #FFFFFF;
+            text-decoration: none;
+        }
+
+        .proof-link small {
+            display: block;
+            margin-bottom: 0.22rem;
+            color: #94A3B8;
+            font-family: SFMono-Regular, Consolas, monospace;
+            font-size: 0.58rem;
+            font-weight: 800;
+            letter-spacing: 0.055em;
+            text-transform: uppercase;
+        }
+
+        .proof-link strong {
+            font-size: 0.88rem;
+        }
+
+        .proof-link > span:last-child {
+            color: #22D3EE;
+            font-family: SFMono-Regular, Consolas, monospace;
+            font-weight: 800;
+        }
+
+        /* Problem-first section */
+        .problem-section {
+            padding: 3rem;
+            border-radius: 8px;
+            background: var(--accent-slate);
+            color: #FFFFFF;
+        }
+
+        .problem-section .kicker {
+            color: #94A3B8;
+        }
+
+        .problem-section h2 {
+            max-width: 760px;
+            color: #FFFFFF;
+        }
+
+        .problem-section > p {
+            max-width: 720px;
+            margin-top: 1rem;
+            color: #CBD5E1;
+            line-height: 1.7;
+        }
+
+        .problem-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 0.7rem;
+            margin-top: 2.2rem;
+        }
+
+        .problem-card {
+            min-height: 185px;
+            padding: 1rem;
+            border: 1px solid #334155;
+            border-radius: 5px;
+            background: rgba(255,255,255,0.035);
+        }
+
+        .problem-card span {
+            display: block;
+            margin-bottom: 2.2rem;
+            color: #22D3EE;
+            font-family: SFMono-Regular, Consolas, monospace;
+            font-size: 0.58rem;
+            font-weight: 800;
+        }
+
+        .problem-card strong {
+            display: block;
+            margin-bottom: 0.45rem;
+            color: #F8FAFC;
+            font-size: 0.93rem;
+        }
+
+        .problem-card p {
+            color: #94A3B8;
+            font-size: 0.74rem;
+            line-height: 1.5;
+        }
+
+        /* Connection section */
+        .connection-panel {
+            display: grid;
+            grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+            gap: 3rem;
+            align-items: center;
+            padding: 3rem;
+            border: 1px solid var(--border-muted);
+            border-radius: 8px;
+            background: #FFFFFF;
+        }
+
+        .connection-panel p {
+            margin-top: 1rem;
+            color: var(--text-secondary);
+            line-height: 1.7;
+        }
+
+        .connection-flow {
+            display: grid;
+            gap: 0.55rem;
+        }
+
+        .flow-row {
+            display: grid;
+            grid-template-columns: 34px 1fr auto;
+            gap: 0.8rem;
+            align-items: center;
+            min-height: 58px;
+            padding: 0.8rem;
+            border: 1px solid var(--border-muted);
+            border-radius: 5px;
+            background: var(--surface-soft);
+        }
+
+        .flow-row b,
+        .flow-row span {
+            font-family: SFMono-Regular, Consolas, monospace;
+            font-size: 0.62rem;
+            font-weight: 800;
+        }
+
+        .flow-row b {
+            color: var(--status-cyan);
+        }
+
+        .flow-row strong {
+            font-size: 0.82rem;
+        }
+
+        .flow-row span {
+            color: #94A3B8;
+        }
+
+        /* Engagement models */
+        .engagement-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 0.9rem;
+        }
+
+        .engagement-card {
+            min-height: 250px;
+            display: flex;
+            flex-direction: column;
+            padding: 1.4rem;
+            border: 1px solid var(--border-muted);
+            border-radius: 6px;
+            background: rgba(255,255,255,0.9);
+        }
+
+        .engagement-card .cap-index {
+            margin-bottom: auto;
+        }
+
+        .engagement-card h3 {
+            margin: 3.2rem 0 0.55rem;
+            font-size: 1.15rem;
+        }
+
+        .engagement-card p {
+            color: var(--text-secondary);
+            font-size: 0.8rem;
+            line-height: 1.55;
+        }
+
+        /* FAQ */
+        .faq-grid {
+            display: grid;
+            gap: 0.6rem;
+        }
+
+        .faq-item {
+            border: 1px solid var(--border-muted);
+            border-radius: 5px;
+            background: #FFFFFF;
+        }
+
+        .faq-item summary {
+            cursor: pointer;
+            list-style: none;
+            padding: 1rem 1.1rem;
+            font-weight: 750;
+            display: flex;
+            justify-content: space-between;
+            gap: 1rem;
+        }
+
+        .faq-item summary::-webkit-details-marker {
+            display: none;
+        }
+
+        .faq-item summary::after {
+            content: "+";
+            color: var(--status-cyan);
+            font-family: SFMono-Regular, Consolas, monospace;
+        }
+
+        .faq-item[open] summary::after {
+            content: "−";
+        }
+
+        .faq-item p {
+            padding: 0 1.1rem 1rem;
+            color: var(--text-secondary);
+            line-height: 1.65;
+            font-size: 0.86rem;
+        }
+
+        .healthcare-callout {
+            display: grid;
+            grid-template-columns: minmax(0, 1fr) auto;
+            gap: 2rem;
+            align-items: center;
+            padding: 2.4rem;
+            border: 1px solid rgba(6,182,212,0.28);
+            border-radius: 7px;
+            background:
+                linear-gradient(135deg, rgba(6,182,212,0.06), rgba(16,185,129,0.035)),
+                #FFFFFF;
+        }
+
+        .healthcare-callout h2 {
+            margin-bottom: 0.8rem;
+            font-size: clamp(2rem, 4vw, 3.35rem);
+            letter-spacing: -0.05em;
+        }
+
+        .healthcare-callout p {
+            max-width: 720px;
+            color: var(--text-secondary);
+            line-height: 1.65;
+        }
+
+        .healthcare-link {
+            display: inline-flex;
+            min-height: 48px;
+            align-items: center;
+            justify-content: center;
+            padding: 0 1rem;
+            border-radius: 4px;
+            background: var(--accent-slate);
+            color: #FFFFFF;
+            text-decoration: none;
+            font-size: 0.82rem;
+            font-weight: 750;
+            white-space: nowrap;
+        }
+
+        .final-cta {
+            display: grid;
+            grid-template-columns: minmax(0, 1.08fr) minmax(280px, 0.92fr);
+            gap: 3rem;
+            align-items: center;
+            padding: 2.7rem;
+            border: 1px solid var(--border-muted);
+            border-radius: 7px;
+            background: var(--surface-soft);
+        }
+
+        .final-cta p {
+            margin-top: 1rem;
+            color: var(--text-secondary);
+            line-height: 1.65;
+        }
+
+        .final-actions {
+            display: grid;
+            gap: 0.7rem;
+        }
+
+        .cta-button,
+        .secondary-button {
+            min-height: 48px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            padding: 0 1.25rem;
+            border-radius: 4px;
+            font-size: 0.86rem;
+            font-weight: 750;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .cta-button {
+            border: 1px solid var(--accent-slate);
+            background: var(--accent-slate);
+            color: #FFFFFF;
+        }
+
+        .secondary-button {
+            border: 1px solid var(--border-muted);
+            background: #FFFFFF;
+            color: var(--accent-slate);
+        }
+
+        /* About + portal */
+        .about-modal,
+        .portal-modal {
+            position: fixed;
+            inset: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.25s ease;
+        }
+
+        .about-modal {
+            z-index: 100;
+            background: rgba(15,23,42,0.45);
+            backdrop-filter: blur(12px);
+        }
+
+        .portal-modal {
+            z-index: 101;
+            background: rgba(15,23,42,0.6);
+            backdrop-filter: blur(12px);
+        }
+
+        .about-modal.active,
+        .portal-modal.active {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        .about-card {
+            position: relative;
+            width: min(92%, 700px);
+            padding: 2.5rem;
+            border: 1px solid var(--border-muted);
+            border-radius: 6px;
+            background: #FFFFFF;
+            box-shadow: 0 25px 50px rgba(0,0,0,0.15);
+        }
+
+        .about-card h2 {
+            margin-bottom: 1rem;
+            font-size: 2rem;
+            letter-spacing: -0.04em;
+        }
+
+        .about-card p {
+            margin-bottom: 0.9rem;
+            color: var(--text-secondary);
+            line-height: 1.65;
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 1.2rem;
+            right: 1.2rem;
+            border: 0;
+            background: transparent;
+            color: #64748B;
+            font-size: 1.25rem;
+            cursor: pointer;
+        }
+
+        .portal-card {
+            width: 95%;
+            max-width: 1200px;
+            height: 90%;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            position: relative;
+            border: 1px solid #1E293B;
+            border-radius: 8px;
+            background: #090D1A;
+        }
+
+        .portal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 1.5rem;
+            border-bottom: 1px solid #1E293B;
+            background: #090D1A;
+            color: #FFFFFF;
+        }
+
+        .portal-iframe {
+            width: 100%;
+            height: 100%;
+            border: 0;
+            background: #090D1A;
+        }
+
+        footer {
+            border-top: 1px solid var(--border-muted);
+            padding-top: 2.5rem;
+            margin-top: 4rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1.5rem;
+        }
+
+        .lock-indicator {
+            font-size: 0.75rem;
+            font-weight: 700;
+            font-family: SFMono-Regular, Consolas, monospace;
+            color: var(--accent-slate);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .legal-perimeter {
+            font-size: 0.725rem;
+            color: #94A3B8;
+            max-width: 950px;
+            text-align: center;
+            line-height: 1.65;
+        }
+
+        @media (max-width: 900px) {
+            .services-hero,
+            .section-head,
+            .capability-shell,
+            .connection-panel,
+            .final-cta {
+                grid-template-columns: 1fr;
+            }
+
+            .cap-summary {
+                min-height: 0;
+            }
+
+            .cap-signal {
+                margin-top: 2rem;
+            }
+
+            .problem-grid,
+            .engagement-grid {
+                grid-template-columns: repeat(2, minmax(0,1fr));
+            }
+
+            .healthcare-callout {
+                grid-template-columns: 1fr;
+            }
+
+            .healthcare-link {
+                justify-self: start;
+            }
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 1.5rem 1rem 2rem;
+            }
+
+            header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 1.25rem;
+            }
+
+            .nav-links {
+                width: 100%;
+                display: grid;
+                grid-template-columns: repeat(5, minmax(0, 1fr));
+                gap: 0.35rem;
+                margin-left: 0;
+                position: relative;
+            }
+
+            .nav-link-btn {
+                text-align: center;
+                font-size: 0.72rem;
+                padding: 0.4rem 0.1rem;
+                white-space: nowrap;
+            }
+
+            #open-portal-nav {
+                grid-column: 1 / -1;
+                width: 100%;
+                margin-top: 0.25rem;
+                padding: 0.8rem 1rem;
+            }
+
+            .network-ticker {
+                display: none;
+            }
+
+            .services-menu {
+                position: static;
+            }
+
+            .services-menu summary {
+                text-align: center;
+                font-size: 0.8rem;
+                padding: 0.4rem 0;
+            }
+
+            .services-dropdown {
+                position: absolute;
+                top: calc(100% + 0.75rem);
+                left: 0;
+                right: 0;
+                transform: none;
+                width: 100%;
+                margin: 0;
+                padding: 0.5rem;
+                grid-template-columns: 1fr;
+                box-shadow: 0 18px 40px rgba(15, 23, 42, 0.14);
+            }
+
+            .services-dropdown a {
+                padding: 0.7rem 0.85rem;
+            }
+
+            .services-dropdown span {
+                display: none;
+            }
+
+            main {
+                padding-top: 3.5rem;
+            }
+
+            .services-hero {
+                gap: 1.4rem;
+                padding-bottom: 4.25rem;
+            }
+
+            .services-hero h1 {
+                font-size: clamp(3.4rem, 16vw, 5.2rem);
+            }
+
+            .capability-jump {
+                position: relative;
+                top: auto;
+                grid-template-columns: repeat(2, minmax(0,1fr));
+                margin-bottom: 4rem;
+            }
+
+            .section {
+                padding: 4.25rem 0;
+            }
+
+            .section-head {
+                gap: 1rem;
+            }
+
+            .cap-summary,
+            .cap-detail {
+                padding: 1.5rem;
+            }
+
+            .cap-title {
+                margin-top: 2.6rem;
+            }
+
+            .detail-grid,
+            .problem-grid,
+            .engagement-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .problem-section,
+            .connection-panel,
+            .final-cta {
+                padding: 1.5rem;
+            }
+
+            .flow-row {
+                grid-template-columns: 34px 1fr;
+            }
+
+            .flow-row span {
+                display: none;
+            }
+
+            .healthcare-link,
+            .cta-button,
+            .secondary-button {
+                width: 100%;
+            }
+
+            .portal-card {
+                width: 100%;
+                height: 100%;
+                border-radius: 0;
+                border: 0;
+            }
+        }
+
+
+        /* =========================================================
+           PRICING PAGE — BUILT ON THE APPROVED SERVICES SHELL
+           ========================================================= */
+        .pricing-hero {
+            display: grid;
+            grid-template-columns: minmax(0, 1.15fr) minmax(300px, 0.85fr);
+            gap: 4rem;
+            align-items: end;
+            padding-bottom: 5.5rem;
+        }
+
+        .pricing-hero h1 {
+            max-width: 760px;
+            font-size: clamp(3.8rem, 8vw, 6.8rem);
+            line-height: 0.91;
+            letter-spacing: -0.067em;
+            color: var(--accent-slate);
+        }
+
+        .pricing-hero h1 span {
+            display: block;
+            color: #64748B;
+            font-weight: 750;
+        }
+
+        .pricing-hero-side p {
+            color: var(--text-secondary);
+            font-size: 1.05rem;
+            line-height: 1.72;
+        }
+
+        .pricing-floor-note {
+            margin-top: 1.35rem;
+            padding: 1rem 1.05rem;
+            border: 1px solid var(--border-muted);
+            border-left: 3px solid var(--status-cyan);
+            border-radius: 5px;
+            background: rgba(255,255,255,0.92);
+            color: #64748B;
+            font-size: 0.78rem;
+            line-height: 1.55;
+        }
+
+        .pricing-section {
+            padding: 5.75rem 0;
+            border-top: 1px solid var(--border-muted);
+        }
+
+        .pricing-section-head {
+            display: grid;
+            grid-template-columns: minmax(0, 1.2fr) minmax(280px, 0.8fr);
+            gap: 3rem;
+            align-items: end;
+            margin-bottom: 2.5rem;
+        }
+
+        .pricing-section-head h2 {
+            font-size: clamp(2.35rem, 5vw, 4.25rem);
+            line-height: 1;
+            letter-spacing: -0.055em;
+            color: var(--accent-slate);
+        }
+
+        .pricing-section-head p {
+            max-width: 520px;
+            color: var(--text-secondary);
+            line-height: 1.7;
+        }
+
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 1rem;
+        }
+
+        .pricing-card {
+            min-height: 390px;
+            display: flex;
+            flex-direction: column;
+            padding: 1.75rem;
+            border: 1px solid var(--border-muted);
+            border-radius: 7px;
+            background: rgba(255,255,255,0.96);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .pricing-card.systems {
+            background: var(--terminal-bg);
+            border-color: #1E293B;
+            color: #F8FAFC;
+            box-shadow: 0 18px 40px rgba(15,23,42,0.12);
+        }
+
+        .pricing-card.systems::after {
+            content: "CENTER OF GRAVITY";
+            position: absolute;
+            top: 0;
+            right: 0;
+            padding: 0.48rem 0.62rem;
+            background: var(--status-cyan);
+            color: #06202A;
+            font-family: SFMono-Regular, Consolas, monospace;
+            font-size: 0.54rem;
+            font-weight: 900;
+            letter-spacing: 0.06em;
+        }
+
+        .pricing-index {
+            color: var(--status-cyan);
+            font-family: SFMono-Regular, Consolas, monospace;
+            font-size: 0.66rem;
+            font-weight: 800;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+        }
+
+        .pricing-card h3 {
+            margin: 2rem 0 0.25rem;
+            font-size: clamp(2rem, 4vw, 3.2rem);
+            line-height: 1;
+            letter-spacing: -0.055em;
+        }
+
+        .pricing-amount {
+            margin-bottom: 1.25rem;
+            color: var(--accent-slate);
+            font-size: clamp(1.55rem, 3vw, 2.2rem);
+            font-weight: 800;
+            letter-spacing: -0.045em;
+        }
+
+        .pricing-card.systems .pricing-amount {
+            color: #FFFFFF;
+        }
+
+        .pricing-copy {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            line-height: 1.68;
+        }
+
+        .pricing-card.systems .pricing-copy,
+        .pricing-card.systems .pricing-list {
+            color: #94A3B8;
+        }
+
+        .pricing-list {
+            margin: auto 0 0;
+            padding: 1.35rem 0 0;
+            list-style: none;
+            color: #64748B;
+            font-size: 0.77rem;
+            line-height: 1.8;
+        }
+
+        .pricing-list li::before {
+            content: "→";
+            margin-right: 0.45rem;
+            color: var(--status-cyan);
+            font-weight: 900;
+        }
+
+        .systems-mix {
+            margin-top: 1.15rem;
+            padding: 0.9rem 1rem;
+            border: 1px solid #1E293B;
+            border-radius: 5px;
+            background: #0B132B;
+            color: #CBD5E1;
+            font-size: 0.77rem;
+            line-height: 1.55;
+        }
+
+        .systems-mix strong { color: #FFFFFF; }
+
+        .partnership-grid-pricing {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 1rem;
+        }
+
+        .partner-card {
+            min-height: 300px;
+            display: flex;
+            flex-direction: column;
+            padding: 1.5rem;
+            border: 1px solid var(--border-muted);
+            border-radius: 6px;
+            background: #FFFFFF;
+        }
+
+        .partner-card h3 {
+            margin: 1.5rem 0 0.2rem;
+            font-size: 1.65rem;
+            letter-spacing: -0.04em;
+        }
+
+        .partner-price {
+            margin-bottom: 1rem;
+            font-size: 1.6rem;
+            font-weight: 800;
+            letter-spacing: -0.04em;
+        }
+
+        .partner-card p {
+            color: var(--text-secondary);
+            font-size: 0.83rem;
+            line-height: 1.65;
+        }
+
+        .partner-signal {
+            margin-top: auto;
+            padding-top: 1.25rem;
+            color: #64748B;
+            font-family: SFMono-Regular, Consolas, monospace;
+            font-size: 0.61rem;
+            font-weight: 800;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+        }
+
+        .fit-panel {
+            display: grid;
+            grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+            gap: 1px;
+            overflow: hidden;
+            border: 1px solid var(--border-muted);
+            border-radius: 8px;
+            background: var(--border-muted);
+        }
+
+        .fit-title,
+        .fit-copy-pricing {
+            background: #FFFFFF;
+            padding: 2rem;
+        }
+
+        .fit-title h2 {
+            margin-top: 2.5rem;
+            font-size: clamp(2.35rem, 5vw, 4.25rem);
+            line-height: 1;
+            letter-spacing: -0.055em;
+        }
+
+        .fit-copy-pricing p {
+            margin: 0 0 1rem;
+            color: var(--text-secondary);
+            line-height: 1.72;
+        }
+
+        .fit-copy-pricing p:last-child { margin-bottom: 0; }
+        .fit-copy-pricing strong { color: var(--accent-slate); }
+
+        .services-dropdown .services-healthcare-link {
+            grid-column: 1 / -1;
+            margin-top: 0.25rem;
+            padding-top: 0.75rem;
+            border-top: 1px solid var(--border-muted);
+        }
+
+        @media (max-width: 900px) {
+            .pricing-hero,
+            .pricing-section-head,
+            .fit-panel {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .pricing-grid,
+            .partnership-grid-pricing {
+                grid-template-columns: 1fr;
+            }
+
+            .pricing-card,
+            .partner-card {
+                min-height: 0;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+
+    {{ partial "dcd-header.html" . }}
+
+    <main>
+        <section class="pricing-hero">
+            <div>
+                <div class="kicker">DCD Advisory // Pricing</div>
+                <h1>Engagements.<span>Built around the problem.</span></h1>
+            </div>
+
+            <div class="pricing-hero-side">
+                <p>
+                    DCD works with businesses, brands, founders, and organizations that need something
+                    built, improved, automated, connected, or brought to life.
+                </p>
+
+                <div class="pricing-floor-note">
+                    These are starting points, not fixed packages. Final scope reflects complexity,
+                    integrations, timeline, implementation requirements, and the business value of the finished system.
+                </div>
+            </div>
+        </section>
+
+        <section class="pricing-section">
+            <div class="pricing-section-head">
+                <div>
+                    <div class="kicker">Project engagements</div>
+                    <h2>Start with the problem. Scope the right build.</h2>
+                </div>
+
+                <p>
+                    Every engagement is structured around the problem, the opportunity, and what the finished
+                    system needs to make possible.
+                </p>
+            </div>
+
+            <div class="pricing-grid">
+                <article class="pricing-card">
+                    <div class="pricing-index">[ 01 // DISCOVER ]</div>
+                    <h3>Discover</h3>
+                    <div class="pricing-amount">From $2,500</div>
+
+                    <div class="pricing-copy">
+                        For ideas that need clarity before they need code. Strategic discovery,
+                        requirements mapping, research, technical architecture, workflow design,
+                        and a clear path from idea to implementation.
+                    </div>
+
+                    <ul class="pricing-list">
+                        <li>New products and platforms</li>
+                        <li>Complex automation opportunities</li>
+                        <li>Data and AI systems still taking shape</li>
+                        <li>Ambitious ideas that need architecture first</li>
+                    </ul>
+                </article>
+
+                <article class="pricing-card">
+                    <div class="pricing-index">[ 02 // LAUNCH ]</div>
+                    <h3>Launch</h3>
+                    <div class="pricing-amount">From $8,000</div>
+
+                    <div class="pricing-copy">
+                        For focused projects with a clearly defined outcome. A Launch engagement creates
+                        a complete, self-contained capability rather than an open-ended transformation program.
+                    </div>
+
+                    <ul class="pricing-list">
+                        <li>Premium digital experiences</li>
+                        <li>Brand and production systems</li>
+                        <li>Dashboards and internal tools</li>
+                        <li>Targeted automation or prototypes</li>
+                    </ul>
+                </article>
+
+                <article class="pricing-card systems">
+                    <div class="pricing-index">[ 03 // SYSTEMS ]</div>
+                    <h3>Systems</h3>
+                    <div class="pricing-amount">From $20,000</div>
+
+                    <div class="pricing-copy">
+                        For organizations that need more than a deliverable. Systems engagements connect
+                        multiple capabilities into infrastructure that improves how the business actually operates.
+                    </div>
+
+                    <div class="systems-mix">
+                        <strong>Typical mix:</strong> Web + Automation + Data + APIs + Internal Workflows + AI + Reporting
+                    </div>
+
+                    <ul class="pricing-list">
+                        <li>Connected operational systems</li>
+                        <li>Multi-step digital platforms</li>
+                        <li>Workflow and data infrastructure</li>
+                        <li>Systems that create a new business capability</li>
+                    </ul>
+                </article>
+
+                <article class="pricing-card">
+                    <div class="pricing-index">[ 04 // CUSTOM ]</div>
+                    <h3>Custom</h3>
+                    <div class="pricing-amount">From $30,000</div>
+
+                    <div class="pricing-copy">
+                        For complex applications, platforms, AI systems, data products, sponsor technology,
+                        enterprise workflows, and ambitious projects that do not fit neatly into an existing category.
+                    </div>
+
+                    <ul class="pricing-list">
+                        <li>Complex applications and platforms</li>
+                        <li>AI and intelligence systems</li>
+                        <li>Data products and enterprise workflows</li>
+                        <li>If it does not exist yet, this is usually where we start</li>
+                    </ul>
+                </article>
+            </div>
+        </section>
+
+        <section class="pricing-section">
+            <div class="pricing-section-head">
+                <div>
+                    <div class="kicker">Ongoing systems partnerships</div>
+                    <h2>Keep the system moving.</h2>
+                </div>
+
+                <p>
+                    Ongoing partnerships are primarily for systems built or managed by DCD — where continued
+                    optimization and development create measurable value after launch.
+                </p>
+            </div>
+
+            <div class="partnership-grid-pricing">
+                <article class="partner-card">
+                    <div class="pricing-index">[ 01 // OPTIMIZE ]</div>
+                    <h3>Optimize</h3>
+                    <div class="partner-price">From $3,000 / month</div>
+                    <p>Monitoring, optimization, maintenance, analytics, technical support, and continued improvements.</p>
+                    <div class="partner-signal">Stabilize // Improve // Protect</div>
+                </article>
+
+                <article class="partner-card">
+                    <div class="pricing-index">[ 02 // RUN + GROW ]</div>
+                    <h3>Run + Grow</h3>
+                    <div class="partner-price">From $5,000 / month</div>
+                    <p>Continuous development, automation, integrations, reporting, experimentation, and operational improvement.</p>
+                    <div class="partner-signal">Operate // Expand // Measure</div>
+                </article>
+
+                <article class="partner-card">
+                    <div class="pricing-index">[ 03 // EMBEDDED ]</div>
+                    <h3>Embedded</h3>
+                    <div class="partner-price">From $10,000 / month</div>
+                    <p>
+                        DCD operates as an extension of the internal team — identifying opportunities,
+                        designing systems, building solutions, and continuously moving ideas forward.
+                    </p>
+                    <div class="partner-signal">Identify // Build // Evolve</div>
+                </article>
+            </div>
+        </section>
+
+        <section class="pricing-section">
+            <div class="fit-panel">
+                <div class="fit-title">
+                    <div class="kicker">Fit</div>
+                    <h2>Not every project needs DCD.</h2>
+                </div>
+
+                <div class="fit-copy-pricing">
+                    <p>
+                        DCD is generally not the right fit for <strong>commodity websites or isolated technical tasks</strong>.
+                        We are most valuable when the thing being built needs to solve a business problem, connect systems,
+                        improve operations, or create a new capability.
+                    </p>
+
+                    <p>
+                        A focused website or brand engagement can still be a strong fit when the work demands strategy,
+                        production quality, or a larger digital system around it.
+                    </p>
+
+                    <p>
+                        <strong>If your website needs to connect to what happens after someone clicks, submits,
+                        buys, applies, uploads, or interacts — that is where DCD gets interesting.</strong>
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="final-cta">
+                <div>
+                    <div class="kicker">Have something different in mind?</div>
+                    <h2>Bring the problem. We’ll determine what should be built.</h2>
+
+                    <p>
+                        Some of the best projects do not fit neatly into a service menu. If you have an idea,
+                        a problem, or an opportunity and are not yet sure what needs to be built, start there.
+                    </p>
+                </div>
+
+                <div class="final-actions">
+                    <button class="cta-button" id="open-portal-pricing">
+                        Start a Project <span>→</span>
+                    </button>
+
+                    <a class="secondary-button" href="/work/">See the Work</a>
+                    <a class="secondary-button" href="/services/">Explore Services</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div class="about-modal" id="about-overlay">
+        <div class="about-card">
+            <button class="close-btn" id="close-about" aria-label="Close About">&times;</button>
+
+            <h2>Built for problems that do not fit neatly inside a template.</h2>
+
+            <p>
+                DCD Advisory combines creative and technical capabilities around the actual problem —
+                from identity systems and digital experiences to automation, dashboards, AI tools,
+                and custom operational workflows.
+            </p>
+
+            <p>
+                The deliverable changes, but the method stays consistent: understand the problem,
+                design the system, build it properly, and connect the pieces that should work together.
+            </p>
+        </div>
+    </div>
+
+    {{ partial "dcd-project-portal.html" . }}
+    {{ partial "dcd-footer.html" . }}
+
+    <script>
+        const WEB_APP_URL = document.getElementById("portal-overlay")?.dataset.portalUrl || "";
+
+        document.addEventListener("DOMContentLoaded", () => {
+            const brandHome = document.getElementById("brand-home");
+
+            if (brandHome) {
+                brandHome.addEventListener("click", () => {
+                    window.location.href = "/";
+                });
+            }
+
+            const openAboutBtn = document.getElementById("open-about");
+            const closeAboutBtn = document.getElementById("close-about");
+            const aboutOverlay = document.getElementById("about-overlay");
+
+            if (openAboutBtn && closeAboutBtn && aboutOverlay) {
+                openAboutBtn.addEventListener("click", () => {
+                    aboutOverlay.classList.add("active");
+                });
+
+                closeAboutBtn.addEventListener("click", () => {
+                    aboutOverlay.classList.remove("active");
+                });
+
+                aboutOverlay.addEventListener("click", (event) => {
+                    if (event.target === aboutOverlay) {
+                        aboutOverlay.classList.remove("active");
+                    }
+                });
+            }
+
+            const openPortalNavBtn = document.getElementById("open-portal-nav");
+            const openPortalPricingBtn = document.getElementById("open-portal-pricing");
+            const closePortalBtn = document.getElementById("close-portal");
+            const portalOverlay = document.getElementById("portal-overlay");
+            const portalFrame = document.getElementById("portal-frame");
+
+            function openProjectPortal() {
+                if (!portalOverlay || !portalFrame) return;
+
+                if (portalFrame.src === "about:blank" || portalFrame.src === "") {
+                    portalFrame.src = WEB_APP_URL || portalFrame.dataset.src || "";
+                }
+
+                portalOverlay.classList.add("active");
+            }
+
+            if (openPortalNavBtn) {
+                openPortalNavBtn.addEventListener("click", openProjectPortal);
+            }
+
+            if (openPortalPricingBtn) {
+                openPortalPricingBtn.addEventListener("click", openProjectPortal);
+            }
+
+            if (closePortalBtn && portalOverlay) {
+                closePortalBtn.addEventListener("click", () => {
+                    portalOverlay.classList.remove("active");
+                });
+
+                portalOverlay.addEventListener("click", (event) => {
+                    if (event.target === portalOverlay) {
+                        portalOverlay.classList.remove("active");
+                    }
+                });
+            }
+        });
+    </script>
+
+</body>
+</html>
