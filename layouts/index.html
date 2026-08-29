@@ -559,6 +559,235 @@
             font-size: 0.92rem;
             line-height: 1.45;
         }
+        
+
+        /* =========================================================
+           CONNECTED BUSINESS SYSTEM
+           ========================================================= */
+
+        .connected-system-section {
+            padding-top: 5rem;
+            padding-bottom: 5rem;
+        }
+
+        .connected-system-heading {
+            display: grid;
+            grid-template-columns: minmax(0, 1fr) minmax(300px, 0.72fr);
+            gap: 3rem;
+            align-items: end;
+            margin-bottom: 1.75rem;
+        }
+
+        .connected-system-heading h2 {
+            max-width: 650px;
+            font-size: clamp(2.2rem, 4.2vw, 3.5rem);
+            line-height: 0.98;
+            letter-spacing: -0.05em;
+            color: var(--accent-slate);
+        }
+
+        .connected-system-heading > p {
+            max-width: 500px;
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            line-height: 1.65;
+        }
+
+        .connected-system-board {
+            overflow: hidden;
+            border: 1px solid #1E293B;
+            border-radius: 8px;
+            background: #090D1A;
+            box-shadow: 0 20px 42px rgba(15, 23, 42, 0.13);
+        }
+
+        .connected-board-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 1rem;
+            padding: 0.8rem 1rem;
+            border-bottom: 1px solid #1E293B;
+            color: #64748B;
+            font-family: SFMono-Regular, Consolas, monospace;
+            font-size: 0.6rem;
+            font-weight: 800;
+            letter-spacing: 0.06em;
+        }
+
+        .connected-board-status {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.45rem;
+            color: #34D399;
+            white-space: nowrap;
+        }
+
+        .connected-board-status i {
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: var(--neural-green);
+            box-shadow: 0 0 0 4px rgba(16, 185, 129, 0.08);
+        }
+
+        .connected-flow {
+            display: grid;
+            grid-template-columns:
+                minmax(0, 1fr) 18px
+                minmax(0, 1fr) 18px
+                minmax(0, 1fr) 18px
+                minmax(0, 1fr) 18px
+                minmax(0, 1fr) 18px
+                minmax(0, 1fr);
+            align-items: stretch;
+            gap: 0.35rem;
+            padding: 1.1rem;
+        }
+
+        .connected-node {
+            min-width: 0;
+            padding: 0.9rem 0.8rem;
+            border: 1px solid #1E293B;
+            border-radius: 5px;
+            background: #0F172A;
+        }
+
+        .connected-node small {
+            display: block;
+            min-height: 1.4em;
+            margin-bottom: 0.65rem;
+            color: #64748B;
+            font-family: SFMono-Regular, Consolas, monospace;
+            font-size: 0.5rem;
+            font-weight: 800;
+            line-height: 1.35;
+            letter-spacing: 0.05em;
+        }
+
+        .connected-node strong {
+            display: block;
+            margin-bottom: 0.18rem;
+            color: #F8FAFC;
+            font-size: 0.84rem;
+            line-height: 1.25;
+        }
+
+        .connected-node span {
+            display: block;
+            color: #94A3B8;
+            font-size: 0.64rem;
+            line-height: 1.35;
+        }
+
+        .connected-node-ai {
+            border-color: rgba(6, 182, 212, 0.55);
+            background: rgba(6, 182, 212, 0.07);
+        }
+
+        .connected-link {
+            display: grid;
+            place-items: center;
+            color: #22D3EE;
+            font-family: SFMono-Regular, Consolas, monospace;
+            font-size: 0.85rem;
+            font-weight: 900;
+        }
+
+        .connected-board-bottom {
+            display: grid;
+            grid-template-columns: minmax(0, 1fr) auto auto;
+            gap: 1.5rem;
+            align-items: center;
+            padding: 1rem 1.1rem;
+            border-top: 1px solid #1E293B;
+            background: #0B1220;
+        }
+
+        .connected-board-bottom small {
+            display: block;
+            margin-bottom: 0.25rem;
+            color: #64748B;
+            font-family: SFMono-Regular, Consolas, monospace;
+            font-size: 0.55rem;
+            font-weight: 800;
+            letter-spacing: 0.06em;
+        }
+
+        .connected-board-bottom strong {
+            display: block;
+            color: #F8FAFC;
+            font-size: 0.82rem;
+            line-height: 1.35;
+        }
+
+        .connected-price {
+            padding-left: 1.5rem;
+            border-left: 1px solid #1E293B;
+        }
+
+        .connected-price strong {
+            color: #22D3EE;
+            white-space: nowrap;
+        }
+
+        .connected-pricing-link {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 40px;
+            padding: 0 0.95rem;
+            border: 1px solid #334155;
+            border-radius: 4px;
+            color: #F8FAFC;
+            font-size: 0.72rem;
+            font-weight: 800;
+            text-decoration: none;
+            white-space: nowrap;
+            transition: border-color 0.2s ease, background 0.2s ease;
+        }
+
+        .connected-pricing-link:hover {
+            border-color: #22D3EE;
+            background: rgba(6, 182, 212, 0.06);
+        }
+
+        @media (max-width: 900px) {
+            .connected-system-heading {
+                grid-template-columns: 1fr;
+                gap: 1.15rem;
+            }
+
+            .connected-system-heading > p {
+                max-width: 650px;
+            }
+
+            .connected-flow {
+                grid-template-columns: 1fr;
+                gap: 0.45rem;
+            }
+
+            .connected-link {
+                min-height: 16px;
+                transform: rotate(90deg);
+            }
+
+            .connected-board-bottom {
+                grid-template-columns: 1fr;
+                gap: 0.9rem;
+            }
+
+            .connected-price {
+                padding-left: 0;
+                padding-top: 0.9rem;
+                border-left: 0;
+                border-top: 1px solid #1E293B;
+            }
+
+            .connected-pricing-link {
+                justify-self: start;
+            }
+        }
 
         /* Capabilities */
         .capability-grid {
@@ -566,7 +795,6 @@
             grid-template-columns: repeat(2, minmax(0, 1fr));
             gap: 1.25rem;
         }
-
         .capability-card {
             background: rgba(255,255,255,0.9);
             border: 1px solid var(--border-muted);
@@ -1756,15 +1984,15 @@
                 </div>
 
                 <h1>
-                    We Build What the Business Needs.
-                    <span>Brand. Web. Automation. AI.</span>
-                </h1>
+    We Build What Happens Next.
+    <span>After the click, the system takes over.</span>
+</h1>
 
-                <p class="hero-lead">
-                    DCD Advisory designs brands, digital experiences, automation, and AI systems
-                    for organizations with problems that do not fit neatly inside a template.
-                    The deliverable changes. The method does not.
-                </p>
+<p class="hero-lead">
+    Your website is the front door. DCD connects it to the forms, files,
+    workflows, follow-up, dashboards, automation, data, and AI that
+    actually move the business forward.
+</p>
 
                 <div class="hero-actions">
                     <button id="open-portal" class="cta-button">
@@ -1830,6 +2058,106 @@
                 </div>
             </div>
         </section>
+        <section class="section-block connected-system-section" id="connected-system">
+
+    <div class="connected-system-heading">
+        <div>
+            <div class="section-kicker">The Connected Business System</div>
+
+            <h2>
+                Your website should start the work.
+            </h2>
+        </div>
+
+        <p>
+            DCD connects what customers see to what happens next — intake,
+            workflows, files, automation, follow-up, reporting, data, and AI.
+            One system instead of a collection of disconnected tools.
+        </p>
+    </div>
+
+    <div class="connected-system-board">
+
+        <div class="connected-board-top">
+            <span>DCD_ADVISORY // SYSTEM_ARCHITECTURE</span>
+            <span class="connected-board-status">
+                <i></i> CONNECTED
+            </span>
+        </div>
+
+        <div class="connected-flow">
+
+            <div class="connected-node">
+                <small>01 // FRONT DOOR</small>
+                <strong>Website</strong>
+                <span>Experience</span>
+            </div>
+
+            <div class="connected-link">→</div>
+
+            <div class="connected-node">
+                <small>02 // CAPTURE</small>
+                <strong>Intake</strong>
+                <span>Forms + Requests</span>
+            </div>
+
+            <div class="connected-link">→</div>
+
+            <div class="connected-node">
+                <small>03 // OPERATIONS</small>
+                <strong>Workspace</strong>
+                <span>Files + Systems</span>
+            </div>
+
+            <div class="connected-link">→</div>
+
+            <div class="connected-node">
+                <small>04 // MOVEMENT</small>
+                <strong>Automation</strong>
+                <span>Routing + Actions</span>
+            </div>
+
+            <div class="connected-link">→</div>
+
+            <div class="connected-node">
+                <small>05 // VISIBILITY</small>
+                <strong>Reporting</strong>
+                <span>Dashboards + Follow-Up</span>
+            </div>
+
+            <div class="connected-link">→</div>
+
+            <div class="connected-node connected-node-ai">
+                <small>06 // INTELLIGENCE</small>
+                <strong>AI + Data</strong>
+                <span>Analysis + Support</span>
+            </div>
+
+        </div>
+
+        <div class="connected-board-bottom">
+
+            <div>
+                <small>THE RESULT</small>
+                <strong>
+                    What happens after the click becomes part of the system.
+                </strong>
+            </div>
+
+            <div class="connected-price">
+                <small>SYSTEMS ENGAGEMENTS</small>
+                <strong>From $20,000</strong>
+            </div>
+
+            <a href="/pricing/" class="connected-pricing-link">
+                View Pricing →
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
 
         <section class="section-block" id="services">
             <div class="section-heading">
