@@ -4,9 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>DCD Advisory | Brand, Web, Automation & AI Services</title>
+    <title>DCD Advisory | Brand, Web, Automation &amp; AI Services</title>
     <meta name="description" content="Explore DCD Advisory capabilities across brand systems, web and digital experiences, automation and operations, and AI and data systems.">
     <link rel="canonical" href="{{ .Permalink }}">
+
+    {{ partial "dcd-seo.html" (dict
+        "title" "DCD Advisory | Brand, Web, Automation & AI Services"
+        "description" "Explore DCD Advisory capabilities across brand systems, web and digital experiences, automation and operations, and AI and data systems."
+        "url" .Permalink
+    ) }}
 
     <script type="application/ld+json">
     {

@@ -1,0 +1,13 @@
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="DCD Advisory">
+<meta property="og:title" content="{{ .title }}">
+<meta property="og:description" content="{{ .description }}">
+<meta property="og:url" content="{{ .url }}">
+
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="{{ .title }}">
+<meta name="twitter:description" content="{{ .description }}">
+
+{{ with .canonical }}
+<link rel="canonical" href="{{ . }}">
+{{ end }}

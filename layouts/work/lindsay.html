@@ -8,6 +8,12 @@
     <meta name="description" content="{{ .Params.description }}">
     <link rel="canonical" href="{{ .Permalink }}">
 
+    {{ partial "dcd-seo.html" (dict
+        "title" (printf "%s | DCD Advisory Selected Work" .Title)
+        "description" .Params.description
+        "url" .Permalink
+    ) }}
+
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",

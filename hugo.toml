@@ -2,6 +2,7 @@ baseURL = 'https://dcdadvisory.com/'
 languageCode = 'en-us'
 title = 'DCD Advisory'
 theme = 'PaperMod'
+enableRobotsTXT = true
 
 [params]
   description = "DCD Advisory designs brands, websites, automation systems, AI tools, and digital infrastructure built around real business problems."
