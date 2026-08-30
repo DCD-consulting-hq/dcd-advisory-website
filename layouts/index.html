@@ -1156,6 +1156,152 @@
             line-height: 1.55;
         }
 
+
+        /* Homepage pricing teaser */
+        .pricing-teaser {
+            padding-top: 5rem;
+            padding-bottom: 5rem;
+        }
+
+        .pricing-rail {
+            display: grid;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            border: 1px solid var(--border-muted);
+            border-radius: 6px;
+            overflow: hidden;
+            background: #FFFFFF;
+        }
+
+        .pricing-rail-item {
+            min-height: 155px;
+            display: flex;
+            flex-direction: column;
+            padding: 1.35rem;
+            border-right: 1px solid var(--border-muted);
+            background: rgba(255,255,255,0.92);
+        }
+
+        .pricing-rail-item:last-child {
+            border-right: none;
+        }
+
+        .pricing-rail-item small {
+            display: block;
+            margin-bottom: 1.3rem;
+            color: #94A3B8;
+            font-family: SFMono-Regular, Consolas, monospace;
+            font-size: 0.62rem;
+            font-weight: 800;
+            letter-spacing: 0.07em;
+            text-transform: uppercase;
+        }
+
+        .pricing-rail-item strong {
+            display: block;
+            margin-bottom: 0.35rem;
+            color: var(--accent-slate);
+            font-size: 1.15rem;
+            letter-spacing: -0.025em;
+        }
+
+        .pricing-rail-item span {
+            margin-top: auto;
+            color: var(--text-secondary);
+            font-size: 0.78rem;
+        }
+
+        .pricing-rail-item.featured {
+            background: var(--accent-slate);
+            border-color: var(--accent-slate);
+        }
+
+        .pricing-rail-item.featured small {
+            color: #22D3EE;
+        }
+
+        .pricing-rail-item.featured strong,
+        .pricing-rail-item.featured span {
+            color: #F8FAFC;
+        }
+
+        .pricing-rail-item.featured .pricing-focus {
+            margin-top: 0.55rem;
+            color: #94A3B8;
+            font-family: SFMono-Regular, Consolas, monospace;
+            font-size: 0.58rem;
+            font-weight: 800;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+        }
+
+        .pricing-teaser-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 2rem;
+            margin-top: 1.25rem;
+            padding: 1rem 1.15rem;
+            border: 1px solid var(--border-muted);
+            border-radius: 5px;
+            background: var(--surface-soft);
+        }
+
+        .pricing-teaser-footer p {
+            max-width: 760px;
+            color: var(--text-secondary);
+            font-size: 0.82rem;
+            line-height: 1.55;
+        }
+
+        .pricing-teaser-footer p strong {
+            color: var(--accent-slate);
+        }
+
+        @media (max-width: 900px) {
+            .pricing-rail {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+
+            .pricing-rail-item {
+                border-bottom: 1px solid var(--border-muted);
+            }
+
+            .pricing-rail-item:nth-child(2) {
+                border-right: none;
+            }
+
+            .pricing-rail-item:nth-child(3),
+            .pricing-rail-item:nth-child(4) {
+                border-bottom: none;
+            }
+
+            .pricing-teaser-footer {
+                align-items: flex-start;
+                flex-direction: column;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .pricing-rail {
+                grid-template-columns: 1fr;
+            }
+
+            .pricing-rail-item,
+            .pricing-rail-item:nth-child(2),
+            .pricing-rail-item:nth-child(3) {
+                border-right: none;
+                border-bottom: 1px solid var(--border-muted);
+            }
+
+            .pricing-rail-item:last-child {
+                border-bottom: none;
+            }
+
+            .pricing-teaser-footer .secondary-button {
+                width: 100%;
+            }
+        }
+
         /* Industries */
         .industry-grid {
             display: grid;
@@ -2286,13 +2432,15 @@
         <section class="section-block" id="selected-work">
             <div class="section-heading">
                 <div>
-                    <div class="section-kicker">Selected work</div>
-                    <h2>Systems designed to be used, not just admired.</h2>
+                    <div class="section-kicker">Selected Work // Systems in Practice</div>
+                    <h2>Different businesses. Different problems. The same systems-first approach.</h2>
                 </div>
 
                 <p>
-                    The projects can look very different on the surface. The common thread is
-                    turning a messy problem into a dependable, reusable system.
+                    DCD builds around the operating problem, not a predefined package. These projects
+                    look different on the surface, but each turns multiple layers — brand, web,
+                    workflow, automation, data, or intelligence — into something the organization
+                    can actually use.
                 </p>
             </div>
 
@@ -2308,10 +2456,10 @@
                     </div>
 
                     <div class="work-content">
-                        <span class="work-tag">Petty Racing Gen5 // Brand Identity &amp; Production System</span>
+                        <span class="work-tag">Petty Racing Gen5 // Brand + Production System</span>
 
                         <h3>
-                            A motorsports identity built to work from digital channels to racewear and large-format production.
+                            A brand system built for real-world production, handoff, and scale.
                         </h3>
 
                         <div class="work-lines">
@@ -2361,11 +2509,11 @@
                         </div>
 
                         <span class="work-tag">
-                            Mindsett Mental Health // Healthcare Systems + Automation
+                            Mindsett Mental Health // Operations + Automation System
                         </span>
 
                         <h3>
-                            Connecting clinical, messaging, and business platforms into one operational system.
+                            A connected operating system across clinical, communication, billing, and reporting workflows.
                         </h3>
 
                         <div class="work-lines">
@@ -2391,15 +2539,15 @@
                         </div>
 
                         <span class="work-card-cta">
-                            Explore Healthcare Systems <span aria-hidden="true">&rarr;</span>
+                            View Case Study <span aria-hidden="true">&rarr;</span>
                         </span>
                     </a>
 
                     <a
-    class="work-card work-card-link"
-    id="work-lindsay"
-    href="/work/lindsay-clancy-trial-intelligence/"
->
+                        class="work-card work-card-link"
+                        id="work-lindsay"
+                        href="/work/lindsay-clancy-trial-intelligence/"
+                    >
                         <div class="work-card-visual">
                             <img
                                 src="/images/work/lindsay-clancy-trial-intelligence-feature.webp"
@@ -2409,11 +2557,11 @@
                         </div>
 
                         <span class="work-tag">
-                            Lindsay Clancy Trial Intelligence // Web + AI &amp; Data
+                            Lindsay Clancy Trial Intelligence // Research + Data System
                         </span>
 
                         <h3>
-                            A fast-moving public trial turned into a structured, source-linked research system.
+                            A source-linked research system built to turn a fast-moving court record into structured intelligence.
                         </h3>
 
                         <div class="work-lines">
@@ -2437,7 +2585,7 @@
                         </div>
 
                         <span class="work-card-cta">
-                            View Live System <span aria-hidden="true">&nearr;</span>
+                            View Case Study <span aria-hidden="true">&rarr;</span>
                         </span>
                     </a>
                 </div>
@@ -2447,6 +2595,59 @@
                 Additional work may be described at a high level where client, project, or operational confidentiality applies.
                 Named projects are shown with permission or are independently owned and operated by DCD.
             </p>
+        </section>
+
+        <section class="section-block pricing-teaser" id="pricing-preview">
+            <div class="section-heading">
+                <div>
+                    <div class="section-kicker">Project Engagements</div>
+                    <h2>A clear starting point for the build.</h2>
+                </div>
+
+                <p>
+                    DCD scopes around the problem, complexity, integrations, and business value —
+                    not a rigid package. These are the typical starting points.
+                </p>
+            </div>
+
+            <div class="pricing-rail" aria-label="DCD Advisory engagement starting prices">
+                <div class="pricing-rail-item">
+                    <small>01 // DISCOVER</small>
+                    <strong>From $2,500</strong>
+                    <span>Strategy, architecture, requirements, and opportunity mapping.</span>
+                </div>
+
+                <div class="pricing-rail-item">
+                    <small>02 // LAUNCH</small>
+                    <strong>From $8,000</strong>
+                    <span>A focused, self-contained build with a clear outcome.</span>
+                </div>
+
+                <div class="pricing-rail-item featured">
+                    <small>03 // SYSTEMS</small>
+                    <strong>From $20,000</strong>
+                    <span>Connected web, workflow, automation, data, APIs, and AI.</span>
+                    <div class="pricing-focus">Center of gravity</div>
+                </div>
+
+                <div class="pricing-rail-item">
+                    <small>04 // CUSTOM</small>
+                    <strong>From $30,000</strong>
+                    <span>Complex platforms, apps, data products, and unusual builds.</span>
+                </div>
+            </div>
+
+            <div class="pricing-teaser-footer">
+                <p>
+                    <strong>Systems is the center of gravity.</strong>
+                    If the website needs to connect to what happens after someone clicks, submits,
+                    buys, applies, uploads, or interacts, that is where DCD gets interesting.
+                </p>
+
+                <a href="/pricing/" class="secondary-button">
+                    View Pricing <span>&rarr;</span>
+                </a>
+            </div>
         </section>
 
         <section class="section-block" id="industries">
