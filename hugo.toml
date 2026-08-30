@@ -9,7 +9,7 @@ enableRobotsTXT = true
   author = "Chadwick"
 
   googleAnalyticsID = "G-1GE4DVRW5B"
-
+  images = ["https://dcdadvisory.com/images/dcd-advisory-social-share.png"]
   ShowBreadCrumbs = true
   ShowCodeCopyButtons = true
   
