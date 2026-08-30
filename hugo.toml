@@ -8,6 +8,8 @@ enableRobotsTXT = true
   description = "DCD Advisory designs brands, websites, automation systems, AI tools, and digital infrastructure built around real business problems."
   author = "Chadwick"
 
+  googleAnalyticsID = "G-1GE4DVRW5B"
+
   ShowBreadCrumbs = true
   ShowCodeCopyButtons = true
   

@@ -1,0 +1,110 @@
+{{ with .Site.Params.googleAnalyticsID }}
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id={{ . }}"></script>
+
+<script>
+  window.dataLayer = window.dataLayer || [];
+
+  function gtag() {
+    dataLayer.push(arguments);
+  }
+
+  gtag('js', new Date());
+  gtag('config', '{{ . }}');
+
+  /*
+   * DCD Advisory interaction tracking
+   */
+  document.addEventListener('click', function (event) {
+    const target = event.target.closest('a, button');
+
+    if (!target) return;
+
+    /* Start a Project */
+    if (
+      target.id === 'open-portal' ||
+      target.id === 'open-portal-nav' ||
+      target.id === 'open-portal-final'
+    ) {
+      gtag('event', 'project_portal_open', {
+        page_path: window.location.pathname,
+        button_location: target.id
+      });
+
+      return;
+    }
+
+    /* Pricing */
+    if (
+      target.tagName === 'A' &&
+      target.getAttribute('href') &&
+      target.getAttribute('href').startsWith('/pricing')
+    ) {
+      gtag('event', 'view_pricing', {
+        page_path: window.location.pathname,
+        link_text: target.innerText.trim()
+      });
+
+      return;
+    }
+
+    /* Case studies */
+    if (
+      target.tagName === 'A' &&
+      target.getAttribute('href') &&
+      target.getAttribute('href').startsWith('/work/')
+    ) {
+      const href = target.getAttribute('href');
+
+      gtag('event', 'view_case_study', {
+        page_path: window.location.pathname,
+        case_study: href
+      });
+
+      return;
+    }
+
+    /* Direct contact */
+    if (
+      target.tagName === 'A' &&
+      (
+        target.getAttribute('href')?.startsWith('mailto:') ||
+        target.getAttribute('href')?.startsWith('tel:')
+      )
+    ) {
+      gtag('event', 'contact_click', {
+        page_path: window.location.pathname,
+        contact_method:
+          target.getAttribute('href').startsWith('mailto:')
+            ? 'email'
+            : 'phone'
+      });
+    }
+  });
+
+  /*
+   * Completed Project Discovery lead
+   * The Apps Script portal sends this message only after
+   * finalizeLeadContactRecords() succeeds.
+   */
+  window.addEventListener('message', function (event) {
+    if (!event.data || event.data.type !== 'dcd_generate_lead') {
+      return;
+    }
+
+    const portalFrame = document.querySelector('#portal-overlay iframe');
+
+    if (!portalFrame || event.source !== portalFrame.contentWindow) {
+      return;
+    }
+
+    gtag('event', 'generate_lead', {
+      lead_source: event.data.source || 'project_discovery',
+      page_path: window.location.pathname
+    });
+  });
+
+</script>
+
+{{ end }}
