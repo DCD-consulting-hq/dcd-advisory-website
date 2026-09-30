@@ -1,0 +1,8 @@
+<!doctype html>
+<html lang="en" data-theme="light"><head>{{ partial "v2/head.html" . }}</head>
+<body id="top"><a class="skip-link" href="#main">Skip to content</a>
+{{ partial "v2/header.html" . }}
+<main id="main" tabindex="-1">{{ block "main" . }}{{ end }}</main>
+{{ partial "v2/footer.html" . }}{{ partial "dcd-project-portal.html" . }}
+{{ $js := resources.Get "js/dcd-v2.js" | minify | fingerprint }}<script defer src="{{ $js.RelPermalink }}" integrity="{{ $js.Data.Integrity }}"></script>
+</body></html>

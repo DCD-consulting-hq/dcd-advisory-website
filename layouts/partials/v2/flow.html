@@ -1,0 +1,1 @@
+<ol class="flow {{ with .class }}{{ . }}{{ end }}" aria-label="{{ .label }}">{{ range $i, $step := .steps }}<li><span class="step-index">{{ printf "%02d" (add $i 1) }}</span><span>{{ $step }}</span></li>{{ end }}</ol>

@@ -1,4 +1,4 @@
-{{/* 
+{{/*
     DCD PROJECT PORTAL ROUTER
 
     Default:
@@ -27,7 +27,8 @@
 {{ end }}
 
 <!-- INTERACTIVE SYSTEMS PORTAL MODAL -->
-<div
+<dialog
+    aria-label="{{ $portalTitle }}"
     class="portal-modal"
     id="portal-overlay"
     data-portal-url="{{ $portalUrl }}"
@@ -37,7 +38,7 @@
             <div class="brand-container">
                 <div
                     class="brand-text"
-                    style="color: #F8FAFC; font-size: 1rem;"
+
                 >
                     {{ $portalLabel }}
                 </div>
@@ -48,12 +49,13 @@
                 id="close-portal"
                 type="button"
                 aria-label="Close project portal"
-                style="position: static; color: #64748B; font-size: 1.25rem;"
+
             >
                 ✕
             </button>
         </div>
 
+        <p class="portal-privacy">Do not enter patient data, passwords, credentials, API keys, or sensitive information.</p>
         <iframe
             class="portal-iframe"
             id="portal-frame"
@@ -62,5 +64,6 @@
             title="{{ $portalTitle }}"
             loading="lazy"
         ></iframe>
+        <div class="portal-return"><button type="button" data-close-dialog>Return to website</button></div>
     </div>
-</div>
+</dialog>

@@ -5,7 +5,7 @@ theme = 'PaperMod'
 enableRobotsTXT = true
 
 [params]
-  description = "DCD Advisory designs brands, websites, automation systems, AI tools, and digital infrastructure built around real business problems."
+  description = "DCD Advisory is a founder-led AI and automation consultancy building practical systems around data, software, workflows and people."
   author = "Chadwick"
 
   googleAnalyticsID = "G-1GE4DVRW5B"

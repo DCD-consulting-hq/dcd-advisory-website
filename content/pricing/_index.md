@@ -1,5 +1,5 @@
 ---
 title: "Pricing"
-description: "DCD Advisory engagement pricing for discovery, focused launches, connected systems, custom builds, and ongoing systems partnerships."
+description: "Discuss project scope for AI, automation, integration, and data systems with DCD Advisory."
 url: "/pricing/"
 ---

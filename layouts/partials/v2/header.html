@@ -1,0 +1,7 @@
+<header class="site-header wrap">
+<a class="wordmark" href="/" aria-label="DCD Advisory home"><span class="brand-symbol" aria-hidden="true">D<span></span></span><span>DCD<span class="wordmark-sub">ADVISORY</span></span></a>
+<button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav" hidden>Menu <span aria-hidden="true">+</span></button>
+<nav id="site-nav" aria-label="Main navigation">
+{{ $current := .RelPermalink }}{{ range slice (dict "name" "Home" "url" "/") (dict "name" "AI Systems" "url" "/ai-systems/") (dict "name" "Work" "url" "/work/") (dict "name" "Healthcare" "url" "/healthcare/") (dict "name" "Insights" "url" "/blog/") (dict "name" "Contact" "url" "/contact/") }}
+<a href="{{ .url }}" {{ if or (eq $current .url) (and (ne .url "/") (hasPrefix $current .url)) }}aria-current="page"{{ end }}>{{ .name }}{{ if eq .name "Contact" }} <span aria-hidden="true">↗</span>{{ end }}</a>{{ end }}
+</nav></header>
