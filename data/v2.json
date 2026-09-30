@@ -1,0 +1,57 @@
+{
+  "systems": [
+    {
+      "number": "01",
+      "id": "publishing",
+      "name": "DCD Research-to-Publishing System",
+      "short": "From public signal to published insight.",
+      "text": "A connected research and publishing workflow: qualify source material, develop a draft, apply editorial review, and deliver it to the website.",
+      "steps": [
+        "Public sources",
+        "Signal qualification",
+        "Gemini research",
+        "AI drafting",
+        "OpenAI editorial review",
+        "OpenAI image generation",
+        "GitHub",
+        "Netlify"
+      ],
+      "note": "Gemini supports research and drafting. OpenAI supports editorial review and image generation. Publishing runs through GitHub and Netlify."
+    },
+    {
+      "number": "02",
+      "id": "discovery",
+      "name": "DCD Project Discovery System",
+      "short": "From an open question to a structured brief.",
+      "text": "Gemini-assisted discovery turns an initial conversation into structured intake. Deterministic rules qualify the project before records, a brief, and follow-up are created.",
+      "steps": [
+        "Client input",
+        "Gemini discovery",
+        "Structured intake",
+        "Deterministic qualification",
+        "Google Sheets",
+        "Project brief",
+        "Gmail follow-up"
+      ],
+      "note": "Model-assisted conversation. Rule-based qualification. Each has a distinct job."
+    }
+  ],
+  "capabilities": [
+    {
+      "name": "AI systems",
+      "text": "Research, extraction, classification, and knowledge tools built around a defined task."
+    },
+    {
+      "name": "Automation + integration",
+      "text": "APIs and repeatable workflows that connect the tools your business already uses."
+    },
+    {
+      "name": "Data + intelligence",
+      "text": "Structured records, useful reporting, and clear paths from information to decisions."
+    },
+    {
+      "name": "Digital products",
+      "text": "Purpose-built interfaces that make the system usable for the people doing the work."
+    }
+  ]
+}

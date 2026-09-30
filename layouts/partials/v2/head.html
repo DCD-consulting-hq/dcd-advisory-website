@@ -1,0 +1,15 @@
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+{{ $title := printf "%s | DCD Advisory" .Title }}{{ if .IsHome }}{{ $title = "DCD Advisory | Applied AI for real business systems" }}{{ end }}{{ if eq .RelPermalink "/blog/" }}{{ $title = "Insights | DCD Advisory" }}{{ end }}
+{{ $description := .Description | default .Site.Params.description }}
+{{ if and .IsPage (eq .Section "blog") }}{{ $description = .Description | default (.Summary | plainify | truncate 160) }}{{ end }}
+{{ if eq .RelPermalink "/work/mindsett-mental-health/" }}{{ $description = "Healthcare systems work focused on practice operations, structured data, and connected workflows." }}{{ end }}
+{{ if eq .RelPermalink "/work/lindsay-clancy-trial-intelligence/" }}{{ $description = "An independent public-information research project exploring source-linked records and experimental case intelligence." }}{{ end }}
+{{ if eq .RelPermalink "/blog/" }}{{ $description = "Perspectives on AI, automation, and connecting technology to practice. The DCD Advisory journal." }}{{ end }}
+<title>{{ $title }}</title><meta name="description" content="{{ $description }}"><link rel="canonical" href="{{ .Permalink }}">
+<meta property="og:site_name" content="DCD Advisory"><meta property="og:title" content="{{ $title }}"><meta property="og:description" content="{{ $description }}"><meta property="og:url" content="{{ .Permalink }}">
+{{ $image := "https://dcdadvisory.com/images/dcd-advisory-social-share.png" }}{{ with .Params.cover.image }}{{ $image = . | absURL }}{{ end }}
+<meta property="og:image" content="{{ $image }}"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="{{ $title }}"><meta name="twitter:description" content="{{ $description }}"><meta name="twitter:image" content="{{ $image }}">
+{{ if and .IsPage (eq .Section "blog") }}<meta property="og:type" content="article"><meta property="article:published_time" content="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}">{{ else }}<meta property="og:type" content="website">{{ end }}
+{{ range .AlternativeOutputFormats }}<link rel="alternate" type="{{ .MediaType.Type }}" href="{{ .Permalink }}" title="{{ $.Site.Title }}">{{ end }}
+{{ $css := resources.Get "css/dcd-v2.css" | minify | fingerprint }}<link rel="stylesheet" href="{{ $css.RelPermalink }}" integrity="{{ $css.Data.Integrity }}">
+{{ partial "dcd-analytics.html" . }}
